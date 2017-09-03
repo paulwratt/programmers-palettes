@@ -1,0 +1,23 @@
+; DawnBringer16 v1 palette (2011) for Paint.Net
+; http://www.pixeljoint.com/forum/forum_posts.asp?TID=12795
+; http://hem.bredband.net/ricfha/pic/db16_v1_analyze.png
+; save this to:
+;  C:\User\<username>\Documents\paint.net User Files\Palettes\db16_v1.paint.net.txt
+;
+ff140c1c
+ff442434
+ff30346d
+ff4e4e4e
+ff854c30
+ff346524
+ffd04648
+ff757161
+ff597dce
+ffd27d2c
+ff8595a1
+ff6daa2c
+ffd2aa99
+ff62c2ca
+ffdad45e
+ffdeeed6
+

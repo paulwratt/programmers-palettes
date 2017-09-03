@@ -1,0 +1,16 @@
+char* cTRANSPARENT32="\x00\x00\x00\x00";
+char* cBLACK32="\x01\x01\x01\x00";
+char* cMEDIUMGREEN32="\x3e\xb8\x49\x00";
+char* cLIGHTGREEN32="\x74\xd0\x7d\x00";
+char* cDARKBLUE32="\x59\x55\xe0\x00";
+char* cLIGHTBLUE32="\x80\x76\xf1\x00";
+char* cDARKRED32="\xb9\x5e\x51\x00";
+char* cCYAN32="\x65\xdb\xef\x00";
+char* cMEDIUMRED32="\xdb\x65\x59\x00";
+char* cLIGHTRED32="\xff\x89\x7d\x00";
+char* cDARKYELLOW32="\xcc\xc3\x5e\x00";
+char* cLIGHTYELLOW32="\xde\xd0\x87\x00";
+char* cDARKGREEN32="\x3a\xa2\x41\x00";
+char* cMAGENTA32="\xb7\x66\xb5\x00";
+char* cGRAY32="\xcc\xcc\xcc\x00";
+char* cWHITE32="\xff\xff\xff\x00";

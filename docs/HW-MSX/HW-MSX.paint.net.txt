@@ -1,0 +1,21 @@
+; MSX 16 color palette (2017) for Paint.Net
+; https://github.com/paulwratt/programmers-palettes/docs/HW-MSX/HW-MSX.paint.net.txt
+; save this to:
+;  C:\User\<username>\Documents\paint.net User Files\Palettes\msx_16.txt
+;
+ff000000 ; 
+ff010101 ; 
+ff3eb849 ; 
+ff74d07d ; 
+ff5955e0 ; 
+ff8076f1 ; 
+ffb95e51 ; 
+ff65dbef ; 
+ffdb6559 ; 
+ffff897d ; 
+ffccc35e ; 
+ffded087 ; 
+ff3aa241 ; 
+ffb766b5 ; 
+ffcccccc ; 
+ffffffff ; 

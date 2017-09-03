@@ -1,0 +1,16 @@
+Transparent
+Black
+MediumGreen
+LightGreen
+DarkBlue
+LightBlue
+DarkRed
+Cyan
+MediumRed
+LightRed
+DarkYellow
+LightYellow
+DarkGreen
+Magenta
+Gray
+White

@@ -1,0 +1,16 @@
+transparent
+black
+medium green
+light green
+dark blue
+light blue
+dark red
+cyan
+medium red
+light red
+dark yellow
+light yellow
+dark green
+magenta
+gray
+white

@@ -1,0 +1,23 @@
+
+Extended Textures:
+
+Current CVS (20091128) texture list and "new" extensions. Add "v" to begining of 
+filename for "vertical" and  "u" to end for "unfocused" except where the 8.3 file 
+format would be broken, then replace first character with "u". New textures can 
+incrementally replace old ones. ie one texture for slider, indivudual textures for 
+unfocused slider and vslider. See "Extended basic texturing" and "init sliders" 
+for logical ordering of image loading.
+
+ | original file |        where        | with focus | unfocused | new file     |
+---------------------------------------------------------------------------------
+   slwtitle.img    File Selector Title   slwtitle     ulwtitle    ulwtitle.img
+   wtitle.img      Window Title          wtitle       wtitleu     wtitleu.img
+   slider.img      Scrollbar Slider      slider       slideru     slideru.img
+   slide.img       Scrollbar background  slide        slideu      slideu.img
+                   Vertical Slider       vslider      vslideru    vslider.img
+                   Vertical Slider                    vslideru    vslideru.img
+                   Vertical background   vslide       vslideu     vslide.img
+                   Vertical background                vslideu     vslideu.img
+   info.img        Info Area Background  info         infou       infou.img
+   exterior.img    Base Window Frame BG  exterior     uxterior    uxterior.img
+

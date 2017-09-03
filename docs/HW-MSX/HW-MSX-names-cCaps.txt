@@ -1,0 +1,16 @@
+cTransparent
+cBlack
+cMediumGreen
+cLightGreen
+cDarkBlue
+cLightBlue
+cDarkRed
+cCyan
+cMediumRed
+cLightRed
+cDarkYellow
+cLightYellow
+cDarkGreen
+cMagenta
+cGray
+cWhite

@@ -1,0 +1,16 @@
+char* cTRANSPARENT24="\x00\x00\x00";
+char* cBLACK24="\x01\x01\x01";
+char* cMEDIUMGREEN24="\x3e\xb8\x49";
+char* cLIGHTGREEN24="\x74\xd0\x7d";
+char* cDARKBLUE24="\x59\x55\xe0";
+char* cLIGHTBLUE24="\x80\x76\xf1";
+char* cDARKRED24="\xb9\x5e\x51";
+char* cCYAN24="\x65\xdb\xef";
+char* cMEDIUMRED24="\xdb\x65\x59";
+char* cLIGHTRED24="\xff\x89\x7d";
+char* cDARKYELLOW24="\xcc\xc3\x5e";
+char* cLIGHTYELLOW24="\xde\xd0\x87";
+char* cDARKGREEN24="\x3a\xa2\x41";
+char* cMAGENTA24="\xb7\x66\xb5";
+char* cGRAY24="\xcc\xcc\xcc";
+char* cWHITE24="\xff\xff\xff";

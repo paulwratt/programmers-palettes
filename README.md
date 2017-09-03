@@ -45,5 +45,5 @@ Current available:
     * HW-MSX
     * (next) HW-CGA
 
-[denilsonsa] https://github.com/denilsonsa
-[gimp-preview] http://denilsonsa.github.io/gimp-palettes/index.html
+[denilsonsa]: https://github.com/denilsonsa
+[gimp-preview]: http://denilsonsa.github.io/gimp-palettes/index.html

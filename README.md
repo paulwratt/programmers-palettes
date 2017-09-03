@@ -1,11 +1,11 @@
 # programmers-palettes
-palettes for programmers, developers, and designers. an extensive suppliment to gimp-palettes by [@denilsonsa][https://github.com/denilsonsa]
+palettes for programmers, developers, and designers. an extensive suppliment to gimp-palettes by [@denilsonsa][denilsonsa]
 
 <https://github.com/denilsonsa/gimp-palettes>
 
 ----
 
-For an individual palette, all .HTML files print the same palette preview for the same name as found on [gimp-palette preview][http://denilsonsa.github.io/gimp-palettes/index.html] page, display the same information as in the files, and their entire list (columns) can copied from the web browser.
+For an individual palette, all .HTML files print the same palette preview for the same name as found on [gimp-palette preview][gimp-preview] page, display the same information as in the files, and their entire list (columns) can copied from the web browser.
 
 Current available:
 
@@ -45,3 +45,5 @@ Current available:
     * HW-MSX
     * (next) HW-CGA
 
+[denilsonsa] https://github.com/denilsonsa
+[gimp-preview] http://denilsonsa.github.io/gimp-palettes/index.html

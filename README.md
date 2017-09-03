@@ -1,5 +1,9 @@
-# programmers-palettes
-palettes for programmers, developers, and designers. an extensive suppliment to gimp-palettes by [@denilsonsa][denilsonsa]
+# Programmers Palettes
+palettes for programmers, developers, and designers.
+
+<https://github.com/paulwratt/programmers-palettes>
+
+an extensive suppliment to gimp-palettes by [@denilsonsa][denilsonsa]
 
 <https://github.com/denilsonsa/gimp-palettes>
 

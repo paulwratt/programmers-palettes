@@ -9,6 +9,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './(basename(pwd))-names-lower_.txt'"
   echo "       './(basename(pwd))-names-CAPS_.txt'"
   echo "       './(basename(pwd))-names-CAPS.txt'"
+  echo "       './(basename(pwd))-names-Caps-space.txt'"
   echo "       './(basename(pwd))-names-cCaps.txt'"
   exit 0
 fi
@@ -26,13 +27,15 @@ RD=`dirname $0`
 
 # has color index and name after color number
 if [ ! "`grep -P '\t0 - ' "$1"`" = "" ]; then
+
   grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\n  --characters=13- > "${BN}-names.lst"
-  cat "${BN}-names.lst" | sed 's/ - /,/g' | cut -d \, -f 2 > "${BN}-names-official.txt"
+  cat "${BN}-names.lst" | sed 's/ - /,/g' | cut -d \, -f 2 | tr [A-Z] [a-z] > "${BN}-names-official.txt"
   cat "${BN}-names-official.txt" | tr \  _ > "${BN}-names_lower_.txt"
   cat "${BN}-names-lower_.txt" | tr [a-z] [A-Z] > "${BN}-names-CAPS_.txt"
   cat "${BN}-names-CAPS_.txt" | tr -d _ > "${BN}-names-CAPS.txt"
   cat "${BN}-names-official.txt" | xargs -I {} $RD/as-capitalised-words.sh {} > "${BN}-names-Caps-space.txt"
   cat "${BN}-names-Caps-space.txt" | tr -d \  | xargs -I {} echo "c{}" "${BN}-names-cCaps.txt"
+
 else
   echo "Error: no color names in '$1'"
 fi

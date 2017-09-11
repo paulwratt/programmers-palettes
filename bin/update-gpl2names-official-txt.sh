@@ -21,7 +21,9 @@ BN=`basename "$BN"`
 
 # has color index and name after color number
 if [ ! "`grep -P '\t0 - ' "$1"`" = "" ]; then
-  grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\n  --characters=13- | sed 's/ - /,/g' | cut -d \, -f 2 > "${BN}-names-official.txt"
+
+  grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\n  --characters=13- | sed 's/ - /,/g' | cut -d \, -f 2 | tr [A-Z] [a-z] > "${BN}-names-official.txt"
+
 else
   echo "Error: no color names in '$1'"
 fi

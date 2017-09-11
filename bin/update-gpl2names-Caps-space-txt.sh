@@ -22,7 +22,8 @@ RD=`dirname $0`
 
 # has color index and name after color number
 if [ ! "`grep -P '\t0 - ' "$1"`" = "" ]; then
-  grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\n  --characters=13- | sed 's/ - /,/g' | cut -d \, -f 2 | xargs -I {} $RD/as-capitalised-words.sh {} > "${BN}-names-Caps-space.txt"
+
+  grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\n  --characters=13- | sed 's/ - /,/g' | cut -d \, -f 2 | tr [A-Z] [a-z] | xargs -I {} $RD/as-capitalised-words.sh {} > "${BN}-names-Caps-space.txt"
 
 else
   echo "Error: no color names in '$1'"

@@ -23,10 +23,12 @@ Current utilities (in order of use):
     * update-gpl2dec24-comma-space-txt.sh - comma seperated space formated decimal RGB values (eg. C argument list)
     * update-gpl2dec24-space-txt.sh - space seperated decimal RGB values (used to generate other palette formats)
 * gpl2hex24-all-txt.sh - generate all hexadecimal 24bit RGB colors in various text formats
-    * update-gpl2hex24-space-txt.sh - space seperated 8bit byte RGB hex values (used to generate other palette/RGBA formats)
-    * update-gpl2hex24-txt.sh - 24bit byte RGB hex values
-    * update-gpl2hex24-html-txt.sh - 6 character HTML #RGB hex values
     * update-gpl2hex24-printf-txt.sh - printf RGB hex values for printf functions
+    * update-gpl2hex24-space-txt.sh - space seperated 8bit byte RGB hex values (used to generate other palette/RGBA formats)
+    * update-gpl2hex24-txt.sh - 24bit word RGB hex values
+    * update-gpl2hex24-html-txt.sh - 6 character HTML #RGB hex values
+    * update-gpl2hex24-CAPS-space-txt.sh - capitalized space seperated 8bit byte RGB hex values (used to generate other palette/RGBA formats)
+    * update-gpl2hex24-CAPS-txt.sh - capitalized 24bit word RGB hex values
 * gpl2names-all-txt.sh
     * update-gpl2names-lst.sh - raw dump of GiMP palette mouse over text (formated "number - name" lowercase)
     * update-gpl2names-official-txt.sh - color names of GiMP palette mouse over text (lowercase space seperated text)

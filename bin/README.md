@@ -29,6 +29,7 @@ Current utilities (in order of use):
     * update-gpl2hex24-html-txt.sh - 6 character HTML #RGB hex values
     * update-gpl2hex24-CAPS-space-txt.sh - capitalized space seperated 8bit byte RGB hex values (used to generate other palette/RGBA formats)
     * update-gpl2hex24-CAPS-txt.sh - capitalized 24bit word RGB hex values
+    * update-gpl2hex24-printf-CAPS-txt.sh - capitalized printf RGB hex values for printf functions
 * gpl2names-all-txt.sh
     * update-gpl2names-lst.sh - raw dump of GiMP palette mouse over text (formated "number - name" lowercase)
     * update-gpl2names-official-txt.sh - color names of GiMP palette mouse over text (lowercase space seperated text)

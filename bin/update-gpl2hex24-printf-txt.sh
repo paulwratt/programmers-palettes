@@ -18,7 +18,7 @@ fi
 BN=`pwd`
 BN=`basename "$BN"`
 
-grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf "\\x%02x\\x%02x\\x%02x\n" > "${BN}-hex-24-printf.txt"
+grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf '\\x%02x\\x%02x\\x%02x\n' > "${BN}-hex-24-printf.txt"
 
 unset BN
 exit 0

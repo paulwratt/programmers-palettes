@@ -24,7 +24,7 @@ BN=`basename "$BN"`
 grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf "%02x %02x %02x\n" > "${BN}-hex-24-space.txt"
 cat "${BN}-hex-24-space.txt" | tr -d \  > "${BN}-hex-24.txt"
 cat cat "${BN}-hex-24.txt" | xargs printf "#%s\n" > cat "${BN}-hex-24-html.txt"
-grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf "\\x%02x\\x%02x\\x%02x\n" > "${BN}-hex-24-printf.txt"
+grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf '\\x%02x\\x%02x\\x%02x\n' > "${BN}-hex-24-printf.txt"
 
 unset BN
 exit 0

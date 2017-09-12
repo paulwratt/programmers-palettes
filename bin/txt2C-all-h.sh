@@ -20,7 +20,6 @@ fi
 BN=`pwd`
 BN=`basename "$BN"`
 PN=`echo "$BN" | sed 's/HW-//g'`
-RD=`dirname $0`
 
 # make sure we have all the required files
 if [ ! -f "./${BN}-names-official.txt" ]; then
@@ -44,10 +43,9 @@ if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
   exit 2
 fi
 
-LN=`cat "./${BN}-names-official.txt" | wc -L`
-
 
 ### "./_set_-C-names-array.h"
+LN=`cat "./${BN}-names-official.txt" | wc -L`
 cat > "./${BN}-C-names-array.h" <<EOF
 // the length of the longest color name
 #define ${PN}_NAMES_MAX=${LN}
@@ -106,15 +104,17 @@ cat "./${BN}-C-hex-RGB-array.h" >> "./${BN}-C-names-hex-RGB-arrays.h"
 
 ### "./_set_-C-cNames-printf-RGB-list.h"
 echo "// ${BN}" > "${BN}-C-cNames-printf-RGB-list.h"
-cat ./${BN}-names-cCaps.txt | xargs printf '\t%s \n' > temp.1
-cat "./${BN}-hex-24-printf-CAPS.txt" | xargs printf ' "%s";\n' > temp.2
-paste -d= temp.1 temp.2 >> "${BN}-C-cNames-printf-RGB-list.h"
+LN=`cat "./${BN}-names-cCaps.txt" | wc -L`
+cat "./${BN}-names-cCaps.txt" | xargs printf "\t%-${LN}s \n" > temp.1
+cat "./${BN}-hex-24-printf-CAPS.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
+paste -d= temp.1 temp.2 > temp.0
+cat temp.0 | sed 's/.x/\\x/g' >> "${BN}-C-cNames-printf-RGB-list.h"
+rm -f temp.0
 rm -f temp.1
 rm -f temp.2
 
 
 unset LN
-unset RD
 unset PN
 unset BN
 exit 0

@@ -25,9 +25,12 @@ if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
 fi
 
 echo "// ${BN}" > "${BN}-C-cNames-printf-RGB-list.h"
-cat ./${BN}-names-cCaps.txt | xargs printf '\t%s \n' > temp.1
-cat "./${BN}-hex-24-printf-CAPS.txt" | xargs printf ' "%s";\n' > temp.2
-paste -d= temp.1 temp.2 >> "${BN}-C-cNames-printf-RGB-list.h"
+LN=`cat "./${BN}-names-cCaps.txt" | wc -L`
+cat "./${BN}-names-cCaps.txt" | xargs printf "\t%-${LN}s \n" > temp.1
+cat "./${BN}-hex-24-printf-CAPS.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
+paste -d= temp.1 temp.2 > temp.0
+cat temp.0 | sed 's/.x/\\x/g' >> "${BN}-C-cNames-printf-RGB-list.h"
+rm -f temp.0
 rm -f temp.1
 rm -f temp.2
 

@@ -1,0 +1,23 @@
+' Arne Palette v20
+Function FUseColor(i)
+	Select i
+		Case 0 SetColor 0, 0, 0
+		Case 1 SetColor 157, 157, 157
+		Case 2 SetColor 255, 255, 255
+		Case 3 SetColor 190, 38, 51
+		Case 4 SetColor 224, 111, 139
+		Case 5 SetColor 73, 60, 43
+		Case 6 SetColor 164, 100, 34
+		Case 7 SetColor 235, 137, 49
+		Case 8 SetColor 247, 226, 107
+		Case 9 SetColor 47, 72, 78
+		Case 10 SetColor 68, 137, 26
+		Case 11 SetColor 163, 206, 39
+		Case 12 SetColor 27, 38, 50
+		Case 13 SetColor 0, 87, 132
+		Case 14 SetColor 49, 162, 242
+		Case 15 SetColor 178, 220, 239
+		Default SetColor 255, 0, 255 ' Out of bounds, Magenta.
+	End Select
+End Function
+

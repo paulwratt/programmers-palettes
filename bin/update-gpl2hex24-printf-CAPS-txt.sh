@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ "$1" = "" -o "$1" = "--help" ]; then
-  echo "gpl2hex24-printf-txt"
+  echo "gpl2hex24-printf-CAPS-txt"
   echo "GiMP color palette (.gpl) to captialized 24bit RGB hexadecimal printf text (.txt)"
   echo "usage: gpl2hex24-printf-CAPS-txt.sh [--help]|filename.gpl"
   echo "notes: './(basename(pwd))-hex-24-printf-CAPS.txt' "

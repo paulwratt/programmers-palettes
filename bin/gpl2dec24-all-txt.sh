@@ -9,6 +9,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './(basename(pwd))-dec-24-comma.txt'"
   echo "       './(basename(pwd))-dec-24-comma-space.txt'"
   echo "       './(basename(pwd))-dec-24-space.txt'"
+  echo "       './(basename(pwd))-dec-24-semi-colon.txt'"
   exit 0
 fi
 if [ ! -f "./$1" ]; then
@@ -27,6 +28,7 @@ grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=, --characters=1-3,5-7,9-11 > "
 cat "${BN}-dec-24-space-comma.txt" | tr -d \ > "${BN}-dec-24-comma.txt"
 cat "${BN}-dec-24-comma.txt" | sed 's/,/, /g' > "${BN}-dec-24-comma-space.txt"
 cat "${BN}-dec-24-comma.txt" | tr , \  > "${BN}-dec-24-space.txt"
+cat "${BN}-dec-24-comma.txt" | tr , \; > "${BN}-dec-24-semi-colon.txt"
 
 unset BN
 exit 0

@@ -1,0 +1,89 @@
+#!/bin/sh
+. .SETUP
+if [ "$basCOLORS_DONE" = "1" ];
+  exit 0
+fi
+if [ "$BASIC_COLORS" = "" ]; then
+
+    # (MSX) colors in BAS remap setaf/setab to setf/setb order
+    #       this means # order of 1st 16: t_COLORs != fb_COLORs
+    #         static int map[8]={ 0,4,2,6,1,5,3,7 };
+
+    # NOTE: sometimes you need screen colors AND actual colors
+    #       color numbers should match ~/.bashrc
+    #       color names are HTML names, plus some extras (eg BROWN)
+    #       fb_COLORs are poked directly in to framebuffer using dd
+    #       t_COLORs can be passed through: set 256 color tput/ESC code
+    #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
+
+    # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
+    # because 88 != 80 these colors work in 4bit or 16bit modes (via dd)
+    fb_COLOR0="\x00\x00\x00\x00";   fb_BLACK="\x01\x01\x01\x00"
+    fb_COLOR1="\xFF\x00\x00\x00";   fb_BLUE="\xFF\x00\x00\x00"
+    fb_COLOR2="\x00\xFF\x00\x00";   fb_GREEN="\x00\xFF\x00\x00"
+    fb_COLOR3="\xFF\xFF\x00\x00";   fb_CYAN="\xFF\xFF\x00\x00"
+    fb_COLOR4="\x00\x00\xFF\x00";   fb_RED="\x00\x00\xFF\x00"
+    fb_COLOR5="\xFF\x00\xFF\x00";   fb_MAGENTA="\xFF\x00\xFF\x00"
+    fb_COLOR6="\x00\x88\x88\x00";   fb_ORANGE="\x00\x88\x88\x00"
+    fb_COLOR7="\x88\x88\x88\x00";   fb_GRAY="\x88\x88\x88\x00"
+    fb_COLOR8="\x44\x44\x44\x00";   fb_DARK_GRAY="\x44\x44\x44\x00"
+    fb_COLOR9="\xFF\x88\x88\x00";   fb_LIGHT_BLUE="\xFF\x88\x88\x00"
+    fb_COLOR10="\x88\xFF\x88\x00";  fb_LIGHT_GREEN="\x88\xFF\x88\x00"
+    fb_COLOR11="\xFF\xFF\x88\x00";  fb_SKY_BLUE="\xFF\xFF\x88x00"
+    fb_COLOR12="\x88\x88\xFF\x00";  fb_LIGHT_RED="\x88\x88\xFF\x00"
+    fb_COLOR13="\xFF\x88\xFF\x00";  fb_LIGHT_MAGENTA="\xFF\x88\xFF\x00"
+    fb_COLOR14="\x00\xFF\xFF\x00";  fb_YELLOW="\x00\xFF\xFF\x00"
+    fb_COLOR15="\xFF\xFF\xFF\x00";  fb_WHITE="\xFF\xFF\xFF\x00"
+
+  if [ "$TERM" ="fbterm" ]; then
+    t_SETCOLOR='\033[3;%d;%s}';  # for printf
+    # fbterm uses decimal values in tput/ESC codes for 256 colors
+    # COLOR 0 is the transparencey (background image) color
+    t_COLOR0="0;0;0";          t_BLACK="1;1;1"
+    t_COLOR1="255;0;0";        t_RED="255;0;0"
+    t_COLOR2="0;255;0";        t_GREEN="0;255;0"
+    t_COLOR3="127;127;0";      t_ORANGE="127;127;0"
+    t_COLOR4="0;0;255";        t_BLUE="0;0;255"
+    t_COLOR5="255;0;255";      t_MAGENTA="255;0;255"
+    t_COLOR6="0;255;255";      t_CYAN="0;255;255"
+    t_COLOR7="127;127;127";    t_GRAY="127;127;127"
+    t_COLOR8="63;63;63";       t_DARK_GRAY="63;63;63"
+    t_COLOR9="255;127;127";    t_LIGHT_RED="255;127;127"
+    t_COLOR10="127;255;127";   t_LIGHT_GREEN="127;255;127"
+    t_COLOR11="255;255;0";     t_YELLOW="255;255;0"
+    t_COLOR12="127;127;255";   t_LIGHT_BLUE="127;127;255"
+    t_COLOR13="255;127;255";   t_LIGHT_MAGENTA="255;127;255"
+    t_COLOR14="127;255;255";   t_SKY_BLUE="127;255;255"
+    t_COLOR15="255;255;255";   t_WHITE="255;255;255"
+
+  else
+    t_SETCOLOR='\033]4;%d;rgb:%s';  # for printf
+    # xterm-color256: xterm screen rxvt urxtv gnome lxterminal tmux
+    # xterm uses hexidecimal values in tput/ESC codes for 256 colors
+    t_COLOR0="00/00/00";       t_BLACK="01/01/01"
+    t_COLOR1="FF/00/00";       t_RED="FF/00/00"
+    t_COLOR2="00/FF/00";       t_GREEN="00/FF/00"
+    t_COLOR3="7F/7F/00";       t_ORANGE="7F/7F/00"
+    t_COLOR4="00/00/FF";       t_BLUE="00/00/FF"
+    t_COLOR5="FF/00/FF";       t_MAGENTA="FF/00/FF"
+    t_COLOR6="00/FF/FF";       t_CYAN="00/FF/FF"
+    t_COLOR7="7F/7F/7F";       t_GRAY="7F/7F/7F"
+    t_COLOR8="3F/3F/3F";       t_DARK_GRAY="3F/3F/3F"
+    t_COLOR9="FF/7F/7F";       t_LIGHT_RED="FF/7F/7F"
+    t_COLOR10="7F/FF/7F";      t_LIGHT_GREEN="7F/FF/7F"
+    t_COLOR11="FF/FF/00";      t_YELLOW="FF/FF/00"
+    t_COLOR12="7F/7F/FF";      t_LIGHT_BLUE="7F/7F/FF"
+    t_COLOR13="FF/7F/FF";      t_LIGHT_MAGENTA="FF/7F/FF"
+    t_COLOR14="7F/FF/FF";      t_SKY_BLUE="7F/FF/FF"
+    t_COLOR15="FF/FF/FF";      t_WHITE="FF/FF/FF"
+  fi
+else
+  if [ ! -f "$BASIC_COLORS" ]; then
+    echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
+    exit 1
+  fi
+  . "$BASIC_COLORS"
+fi
+export basCOLORS_DONE=1
+exit 0
+

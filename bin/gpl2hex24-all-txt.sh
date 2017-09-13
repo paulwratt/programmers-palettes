@@ -9,8 +9,11 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './(basename(pwd))-hex-24.txt' "
   echo "       './(basename(pwd))-hex-24-html.txt' "
   echo "       './(basename(pwd))-hex-24-CAPS-space.txt' "
+  echo "       './(basename(pwd))-hex-24-CAPS-forward-slash.txt' "
   echo "       './(basename(pwd))-hex-24-CAPS.txt' "
-  echo "       './(basename(pwd))-hex-24-printf-CAPS.txt' "
+  echo "       './(basename(pwd))-hex-24-printf-CAPS-RGB888.txt' "
+  echo "       './(basename(pwd))-hex-32-printf-CAPS-RGBA8888.txt' "
+  echo "       './(basename(pwd))-hex-32-printf-CAPS-BGRA8888.txt' "
   exit 0
 fi
 if [ ! -f "./$1" ]; then
@@ -30,8 +33,10 @@ grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | 
 cat "${BN}-hex-24-space.txt" | tr -d \  > "${BN}-hex-24.txt"
 cat "${BN}-hex-24.txt" | xargs printf "#%s\n" > cat "${BN}-hex-24-html.txt"
 cat "${BN}-hex-24-space.txt" | tr [a-f] [A-F] > "${BN}-hex-24-CAPS-space.txt"
+cat "${BN}-hex-24-space.txt" | tr \  / > "${BN}-hex-24-CAPS-forward-slash.txt"
 cat "${BN}-hex-24.txt" | tr [a-f] [A-F] > "${BN}-hex-24-CAPS.txt"
 cat "${BN}-hex-24-printf.txt" | tr [a-f] [A-F] > "${BN}-hex-24-printf-CAPS.txt"
+cat "${BN}-hex-24-printf-CAPS-RGB888.txt" | sed 's/\(.*\)/\1\\x00/g' > "${BN}-hex-32-printf-CAPS-RGBA8888.txt"
 
 unset BN
 exit 0

@@ -6,6 +6,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "notes: the following will be over written, in order"
   echo "       './(basename(pwd))-hex-24-printf.txt' "
   echo "       './(basename(pwd))-hex-24-space.txt' "
+  echo "       './(basename(pwd))-hex-24-0x-comma-space.txt' "
   echo "       './(basename(pwd))-hex-24.txt' "
   echo "       './(basename(pwd))-hex-24-html.txt' "
   echo "       './(basename(pwd))-hex-24-CAPS-space.txt' "

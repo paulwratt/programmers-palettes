@@ -22,9 +22,9 @@ The aim of _programmers-palettes_ is to suppliment, not surplant, [@denilsonsa][
 Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in one day, I'll look at modifying the tagging.
 
 * palettes:
-    * HW-MSX (16 color palette) (tag: 170903-HW-MSX)
+    * ** 170903-HW-MSX ** (16 color palette)
+    * ** (next) HW-CGA ** (16 color palette)
 * TODO:
-    * (next) HW-CGA (16 color palette)
     * (later) DawnBringer16 (16 32bit color restricted palette)
     * (later) DawnBringer32 (32 32bit color restricted palette)
     * (later) Arne16v20 (customised Commodore 64 style restricted palette)
@@ -39,15 +39,15 @@ Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in o
     * (after) HW-Commodore-64 (16 color palette)
     * (after) HW-ZX-Spectrum (8 color palette)
 
-Unfortunately, at the moment, without automation, each _set_ takes about three (3) days (for the full _set_ of useful data in HTML lists and file formats), and since the reason for creating them is to actually use different parts in various code projects I am working on, each _set_ will come as I need them. So until I have some automation tools, and some more templates, they will only be added as I need them. Submissions are welcome, use **HW-MSX** as a basic example, **DawnBringer32** as an alternative (with included image examples - _NOTE not done yet_). Please dont make pull requests for a partial _set_ or multiple _sets_. If its a full _set_ I will make a _TAG_ release (linked from previewer).
+Unfortunately, at the moment, without automation, each _set_ takes about three (3) days (for the full _set_ of useful data in HTML lists and file formats), and since the reason for creating them is to actually use different parts in various code projects I am working on, each _set_ will come as I need them. So until I have some automation tools, and some more templates, they will only be added as I need them. Submissions are welcome, use ** HW-MSX ** as a basic example, ** DawnBringer32 ** as an alternative (with included image examples - _NOTE not done yet_). Please dont make pull requests for a partial _set_ or multiple _sets_. If its a full _set_ I will make a _TAG_ release (linked from previewer).
 
 ----
 
-For an individual palette, all .HTML files print the same palette preview for the same name as found on [gimp-palette preview][gimp-preview] page, display the same information as in the files, and their entire list (columns) can copied from the web browser.
+For an individual palette, all .HTML files print the same palette preview for the same name as found on [gimp-palette preview][gimp-preview] page, display the same information as in the files, and their entire list (column) can copied from the web browser.
 
-For currently available formats an files see: [./FORMATS.md][./FORMATS.md]
+For currently available formats an files see: [./FORMATS.md][formats]
 
-For currently available _sets_ that are linked from the previewer (if they have all files needed):
+For currently available _sets_ that are linked from the previewer (if they have all files needed), and unlinked sets I am still working on:
 
 <https://github.com/paulwratt/programmers-palettes/tree/master/docs> 
 
@@ -55,3 +55,4 @@ For currently available _sets_ that are linked from the previewer (if they have 
 [gimp-preview]: http://denilsonsa.github.io/gimp-palettes/index.html
 [bas]: http://www.moria.de/~michael/bas/
 [cpmtools]: http://www.moria.de/~michael/cpmtools/
+[formats]: https://github.com/paulwratt/programmers-palettes/blob/master/FORMATS.md

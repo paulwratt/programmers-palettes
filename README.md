@@ -22,8 +22,8 @@ The aim of _programmers-palettes_ is to suppliment, not surplant, [@denilsonsa][
 Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in one day, I'll look at modifying the tagging.
 
 * palettes:
-    * ** 170903-HW-MSX ** (16 color palette)
-    * ** (next) HW-CGA ** (16 color palette)
+    * **170903-HW-MSX** (16 color palette)
+    * **(next) HW-CGA** (16 color palette)
 * TODO:
     * (later) DawnBringer16 (16 32bit color restricted palette)
     * (later) DawnBringer32 (32 32bit color restricted palette)

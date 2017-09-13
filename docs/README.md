@@ -20,8 +20,8 @@ Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in o
 Please dont make pull requests for a partial _set_ or multiple _sets_. If its a full _set_ I will make a _TAG_ release (linked from previewer).
 
 * TAG
-    * ** 170903-HW-MSX ** (16 color palette)
-    * ** (next)-HW-CGA ** (16 color palette)
+    * **170903-HW-MSX** (16 color palette)
+    * **(next)-HW-CGA** (16 color palette)
 * TODO:
     * (later) DawnBringer16 (16 32bit color restricted palette)
     * (later) DawnBringer32 (32 32bit color restricted palette)

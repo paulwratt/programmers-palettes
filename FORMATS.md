@@ -57,8 +57,8 @@ an extensive suppliment to [gimp-palettes][gimp-preview] by [@denilsonsa][denils
         * **HW-MSX.gpl** - GiMP palette file with mouse over color numbers and names
         * **HW-MSX.grafix2.pal** - JASC-PAL (Grafx2, Graphics Gale, PaintShop Pro)
         * **HW-MSX.paint.net.txt** - Paint.Net palette file with instructions and optional color names
-        * **HW-MSX.BAS.COLORS** - ShellBASIC PSET/PRESET (Bas) palette files (fbterm + xterm + 32bit BGRA printf for framebuffer)
-        * **HW-MSX.colors.bas** - ANSI (Bas) palette files (fbterm + xterm + 32bit BGRA printf for framebuffer)
+        * **HW-MSX.BAS.COLORS** - ShellBASIC PSET/PRESET (Bas) palette files (fbterm + xterm + 32bit BGRA RPi framebuffer)
+        * **HW-MSX.colors.bas** - ANSI (Bas) palette files (fbterm + xterm + 32bit BGRA framebuffer)
         * **HW-MSX-fbterm-24-RGB-t_COLORS-printf.sh** - shell include file for fbterm printf ESC sequences
         * **HW-MSX-xterm-24-RGB-t_COLORS-printf.sh** - shell include file for xterm printf ESC sequences
 

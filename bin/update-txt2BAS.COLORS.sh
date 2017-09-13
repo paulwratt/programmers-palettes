@@ -20,8 +20,8 @@ if [ ! -f "./${BN}-names-CAPS_.txt" ]; then
   echo "Error: file not found: '././${BN}-names-CAPS_.txt'"
   exit 2
 fi
-if [ ! -f "./${BN}-hex-32-printf-CAPS-BGRA8888.txt" ]; then
-  echo "Error: file not found: '././${BN}-hex-24-printf-CAPS.txt'"
+if [ ! -f "./${BN}-dec-24-space-BGR888.txt" ]; then
+  echo "Error: file not found: '././${BN}-dec-24-space-BGR888.txt'"
   exit 2
 fi
 if [ ! -f "./${BN}-dec-24-semi-colon.txt" ]; then
@@ -39,10 +39,8 @@ CN=`grep -c -E "^[0-9]" "${BN}-dec-24-semi-colon.txt"`
 cat > "./${BN}.BAS.COLORS.0" <<EOF
 #!/bin/sh
 . .SETUP
-if [ "$basCOLORS_DONE" = "1" ];
-  exit 0
-fi
-if [ "$BASIC_COLORS" = "" ]; then
+if [ "\$basCOLORS_DONE" = "1" ]; then
+if [ "\$BASIC_COLORS" = "" ]; then
 
     # (MSX) colors in BAS remap setaf/setab to setf/setb order
     #       this means # order of 1st 16: t_COLORs != fb_COLORs
@@ -56,23 +54,22 @@ if [ "$BASIC_COLORS" = "" ]; then
     #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
 
     # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
-    # because 88 != 80 these colors work in 4bit or 16bit modes (via dd)
 EOF
 
-### framebuffer BGRA8888 printf colors
+### framebuffer BGR888 printf colors
 echo "t_COLOR0" > ./temp.00
 for i in `seq 1 ${CN}`; do
   if [ $i -ne $CN ]; then
     echo "t_COLOR$i" >> ./temp.00
   fi
 done
-cat "./${BN}-hex-32-printf-CAPS-BGRA8888.txt" | xargs printf "::%s::;\n" > ./temp.01
+cat "./${BN}-dec-24-space-BGR888.txt" | tr \  , | xargs printf "::%s::;\n" > ./temp.01
 paste -d= ./temp.00 ./temp.01 > ./temp.02
 cat "./${BN}-names-CAPS_.txt" | xargs printf 't_%s\n' > ./temp.03
 paste -d= ./temp.03 ./temp.01 > ./temp.04
 paste -d\  ./temp.02 ./temp.04 > ./temp.05
 cat ./temp.05 | xargs printf '    %-30s%s\n' > ./temp.0
-cat ./temp.0 >> "./${BN}.BAS.COLORS.0"
+cat ./temp.0 | tr , \  >> "./${BN}.BAS.COLORS.0"
 
 ### fbterm printf ESC colors
 cat >> "./${BN}.BAS.COLORS.0" <<EOF
@@ -123,11 +120,12 @@ cat ./temp.2 >> "./${BN}.BAS.COLORS.0"
 cat >> "./${BN}.BAS.COLORS.0" <<EOF
   fi
 else
-  if [ ! -f "$BASIC_COLORS" ]; then
-    echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
-    exit 1
+  if [ ! -f "\$BASIC_COLORS" ]; then
+    echo "BASIC_COLORS: file not found \'\$BASIC_COLORS\'"
+  else
+    . "\$BASIC_COLORS"
   fi
-  . "$BASIC_COLORS"
+fi
 fi
 export basCOLORS_DONE=1
 exit 0

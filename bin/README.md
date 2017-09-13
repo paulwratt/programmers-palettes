@@ -19,7 +19,7 @@ This folder contains the shell script executables that manipulate data output to
 
 Current utilities (in order of use):
 * assist
-    * ** as-capitalised-words.sh** - used to generate "Caps Words" from "caps words"
+    * **as-capitalised-words.sh** - used to generate "Caps Words" from "caps words"
 * gpl2dec24-all-txt.sh
     * **update-gpl2dec24-space-lst.sh** - space aligned decimal RGB list (can generate .gpl from these)
     * **update-gpl2dec24-space-comma-txt.sh** - space aligned comma seperated decimal RGB values (easy to read)

@@ -16,9 +16,9 @@ an extensive suppliment to [gimp-palettes][gimp-preview] by [@denilsonsa][denils
 # Current color formats and files (example):
 
 * **./docs/HW-MSX/**
-    * **index.html** - meta redirect to ..
-    * **HW-MSX.html** - links other pages and any files not linked
-    * **HW-MSX-names.html** - contains: official CAPS_ CAPS cCaps
+    * index.html - meta redirect to ..
+    * HW-MSX.html - links other pages and any files not linked
+    * HW-MSX-names.html - **contains:** official CAPS_ CAPS cCaps
         * **HW-MSX-names.lst** - aw dump of GiMP palette mouse over text (formated "number - name" lowercase)
         * **HW-MSX-names-official.txt** - lowercase space seperated text color names (from GiMP palette)
         * **HW-MSX-names-lower_.txt** - lower_case color names
@@ -26,15 +26,17 @@ an extensive suppliment to [gimp-palettes][gimp-preview] by [@denilsonsa][denils
         * **HW-MSX-names-CAPS.txt** - CAPITALIZED, no spaces (useful in shell scripts)
         * **HW-MSX-names-Caps-space.txt** - Capialized Space Seperated color names
         * **HW-MSX-names-cCaps.txt** - cCapsColor compacted names (useful as variable names in programs)
-        * **HW-MSX-C-names-array-official.h** - color names array
-    * **HW-MSX-decimal.html - contains: comma semi-colon space
+        * **HW-MSX-C-names-array.h** - a C/C++ color names array
+    * HW-MSX-decimal.html - **contains:** comma semi-colon space
         * **HW-MSX-dec-24-space.lst** - space aligned decimal RGB list (can generate .gpl from these)
         * **HW-MSX-dec-24-space-comma.txt** - space aligned comma seperated decimal RGB values (easy to read)
-        * **HW-MSX-dec-24-comma.txt ** - comma seperated decimal RGB values (compact, eg. CSS rgb() arguments)
+        * **HW-MSX-dec-24-comma.txt** - comma seperated decimal RGB values (compact, eg. CSS rgb() arguments)
         * **HW-MSX-dec-24-comma-space.txt** - comma seperated spaced decimal RGB values (eg. C argument list)
         * **HW-MSX-dec-24-space.txt** - space seperated decimal RGB values (used to generate another palette/format)
         * **HW-MSX-dec-24-semi-colon.txt** - suitable for fbterm ESC sequences using printf
-    * **HW-MSX-hex.html - contains: html hex hex; hex/ printf
+        * **HW-MSX-C-dec-RGB-array.h** - C/C++ decimal RGB array
+        * **HW-MSX-C-names-dec-RGB-arrays.h** - a C/C++ color names and decimal RGB arrays
+    * HW-MSX-hex.html - **contains:** html hex hex; hex/ printf
         * **HW-MSX-hex-24-printf.txt** - 24bit RGB888 hexidecimal printf text
         * **HW-MSX-hex-24-space.txt** - space seperated 8bit byte RGB hex values (used to generate other RGBA formats)
         * **HW-MSX-hex-24-printf-BGR888.txt** - 24bit BGR888 hexidecimal printf text
@@ -48,12 +50,10 @@ an extensive suppliment to [gimp-palettes][gimp-preview] by [@denilsonsa][denils
         * **HW-MSX-hex-32-printf-CAPS-RGBA8888.txt** - 32bit RGBA8888 hexidecimal printf text
         * **HW-MSX-C-cCOLOR24-printf-hex.h** - a C/C++ cCOLORNAME24 24bit RGB hexidecimal list
         * **HW-MSX-C-cCOLOR32-printf-hex.h** - a C/C++ cCOLORNAME32 32bit RGBA hexidecimal list
-        * **HW-MSX-C-dec-RGB-array.h** - C/C++ decimal RGB array
         * **HW-MSX-C-hex-RGB-array.h** - C/C++ hexadecimal RGB array
-        * **HW-MSX-C-names-array.h** - a C/C++ color names array
-        * **HW-MSX-C-names-dec-RGB-arrays.h** - a C/C++ color names and decimal RGB arrays
         * **HW-MSX-C-names-hex-RGB-arrays.h** - a C/C++ color names and hexadecimal RGB arrays
-    * **HW-MSX-palettes.html
+        * **HW-MSX-C-cNames-printf-RGB-list.h** - a C/C++ cColorNames 24bit RGB hexidecimal list
+    * HW-MSX-palettes.html - **contains:** gpl grafx2 paint.net
         * **HW-MSX.gpl** - GiMP palette file with mouse over color numbers and names
         * **HW-MSX.grafix2.pal** - JASC-PAL (Grafx2, Graphics Gale, PaintShop Pro)
         * **HW-MSX.paint.net.txt** - Paint.Net palette file with instructions and optional color names

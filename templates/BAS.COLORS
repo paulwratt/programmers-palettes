@@ -1,8 +1,6 @@
 #!/bin/sh
-. .SETUP
-if [ "$basCOLORS_DONE" = "1" ];
-  exit 0
-fi
+#. .SETUP
+if [ ! "$basCOLORS_DONE" = "1" ]; then
 if [ "$BASIC_COLORS" = "" ]; then
 
     # (MSX) colors in BAS remap setaf/setab to setf/setb order
@@ -17,25 +15,24 @@ if [ "$BASIC_COLORS" = "" ]; then
     #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
 
     # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
-    # because 88 != 80 these colors work in 4bit or 16bit modes (via dd)
-    fb_COLOR0="\x00\x00\x00\x00";   fb_BLACK="\x01\x01\x01\x00"
-    fb_COLOR1="\xFF\x00\x00\x00";   fb_BLUE="\xFF\x00\x00\x00"
-    fb_COLOR2="\x00\xFF\x00\x00";   fb_GREEN="\x00\xFF\x00\x00"
-    fb_COLOR3="\xFF\xFF\x00\x00";   fb_CYAN="\xFF\xFF\x00\x00"
-    fb_COLOR4="\x00\x00\xFF\x00";   fb_RED="\x00\x00\xFF\x00"
-    fb_COLOR5="\xFF\x00\xFF\x00";   fb_MAGENTA="\xFF\x00\xFF\x00"
-    fb_COLOR6="\x00\x88\x88\x00";   fb_ORANGE="\x00\x88\x88\x00"
-    fb_COLOR7="\x88\x88\x88\x00";   fb_GRAY="\x88\x88\x88\x00"
-    fb_COLOR8="\x44\x44\x44\x00";   fb_DARK_GRAY="\x44\x44\x44\x00"
-    fb_COLOR9="\xFF\x88\x88\x00";   fb_LIGHT_BLUE="\xFF\x88\x88\x00"
-    fb_COLOR10="\x88\xFF\x88\x00";  fb_LIGHT_GREEN="\x88\xFF\x88\x00"
-    fb_COLOR11="\xFF\xFF\x88\x00";  fb_SKY_BLUE="\xFF\xFF\x88x00"
-    fb_COLOR12="\x88\x88\xFF\x00";  fb_LIGHT_RED="\x88\x88\xFF\x00"
-    fb_COLOR13="\xFF\x88\xFF\x00";  fb_LIGHT_MAGENTA="\xFF\x88\xFF\x00"
-    fb_COLOR14="\x00\xFF\xFF\x00";  fb_YELLOW="\x00\xFF\xFF\x00"
-    fb_COLOR15="\xFF\xFF\xFF\x00";  fb_WHITE="\xFF\xFF\xFF\x00"
+    fb_COLOR0="0 0 0";         fb_BLACK="1 1 1"
+    fb_COLOR1="255 0 0";       fb_BLUE="255 0 0"
+    fb_COLOR2="0 255 0";       fb_GREEN="0 255 0"
+    fb_COLOR3="255 255 0";     fb_CYAN="255 255 0"
+    fb_COLOR4="0 0 255";       fb_RED="0 0 255"
+    fb_COLOR5="255 0 255";     fb_MAGENTA="255 0 255"
+    fb_COLOR6="0 127 127";     fb_ORANGE="0 127 127"
+    fb_COLOR7="127 127 127";   fb_GRAY="127 127 127"
+    fb_COLOR8="63 63 63";      fb_DARK_GRAY="63 63 63"
+    fb_COLOR9="255 127 127";   fb_LIGHT_BLUE="255 127 127"
+    fb_COLOR10="127 255 127";  fb_LIGHT_GREEN="127 255 127"
+    fb_COLOR11="255 255 127";  fb_SKY_BLUE="255 255 127"
+    fb_COLOR12="127 127 255";  fb_LIGHT_RED="127 127 255"
+    fb_COLOR13="255 127 255";  fb_LIGHT_MAGENTA="255 127 255"
+    fb_COLOR14="0 255 255";    fb_YELLOW="0 255 255"
+    fb_COLOR15="255 255 255";  fb_WHITE="255 255 255"
 
-  if [ "$TERM" ="fbterm" ]; then
+  if [ "$TERM" = "fbterm" ]; then
     t_SETCOLOR='\033[3;%d;%s}';  # for printf
     # fbterm uses decimal values in tput/ESC codes for 256 colors
     # COLOR 0 is the transparencey (background image) color
@@ -80,10 +77,10 @@ if [ "$BASIC_COLORS" = "" ]; then
 else
   if [ ! -f "$BASIC_COLORS" ]; then
     echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
-    exit 1
-  fi
+  else
   . "$BASIC_COLORS"
+  fi
+fi
 fi
 export basCOLORS_DONE=1
-exit 0
 

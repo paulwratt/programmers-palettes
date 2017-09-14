@@ -39,7 +39,7 @@ Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in o
     * (after) HW-Commodore-64 (16 color palette)
     * (after) HW-ZX-Spectrum (8 color palette)
 
-Unfortunately, at the moment, without automation, each _set_ takes about three (3) days (for the full _set_ of useful data in HTML lists and file formats), and since the reason for creating them is to actually use different parts in various code projects I am working on, each _set_ will come as I need them. So until I have some automation tools, and some more templates, they will only be added as I need them. Submissions are welcome, use ** HW-MSX ** as a basic example, ** DawnBringer32 ** as an alternative (with included image examples - _NOTE not done yet_). Please dont make pull requests for a partial _set_ or multiple _sets_. If its a full _set_ I will make a _TAG_ release (linked from previewer).
+Unfortunately, at the moment, without automation, each _set_ takes about three (3) days (for the full _set_ of useful data in HTML lists and file formats), and since the reason for creating them is to actually use different parts in various code projects I am working on, each _set_ will come as I need them. So until I have some automation tools, and some more templates, they will only be added as I need them. Submissions are welcome, use **HW-MSX** as a basic example, **DawnBringer32** as an alternative (with included image examples - _NOTE not done yet_). Please dont make pull requests for a partial _set_ or multiple _sets_. If its a full _set_ I will make a _TAG_ release (linked from previewer).
 
 ----
 

@@ -79,7 +79,7 @@ cat ./temp.0 | tr , \  >> "./${BN}.BAS.COLORS.0"
 ### fbterm printf ESC colors
 cat >> "./${BN}.BAS.COLORS.0" <<EOF
 
-  if [ "$TERM" ="fbterm" ]; then
+  if echo "\$TERM" | grep "fbterm" > /dev/null; then
     t_SETCOLOR='\033[3;%d;%s}';  # for printf
     # fbterm uses decimal values in tput/ESC codes for 256 colors
     # COLOR 0 is the transparencey (background image) color

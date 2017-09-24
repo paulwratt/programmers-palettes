@@ -12,6 +12,8 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './$BN-dec-24-comma-space.txt'"
   echo "       './$BN-dec-24-space.txt'"
   echo "       './$BN-dec-24-semi-colon.txt'"
+  echo "       './$BN-dec-24-space-BGR888.txt'"
+  echo "       './$BN-dec-24-space-BRG888.txt'"
   exit 0
 fi
 if [ ! -f "./$1" ]; then
@@ -29,6 +31,8 @@ cat "${BN}-dec-24-space-comma.txt" | tr -d \ > "${BN}-dec-24-comma.txt"
 cat "${BN}-dec-24-comma.txt" | sed 's/,/, /g' > "${BN}-dec-24-comma-space.txt"
 cat "${BN}-dec-24-comma.txt" | tr , \  > "${BN}-dec-24-space.txt"
 cat "${BN}-dec-24-comma.txt" | tr , \; > "${BN}-dec-24-semi-colon.txt"
+cat "${BN}-dec-24-space.txt" | sed 's/\(.*\)\ \(.*\)\ \(.*\)/\3 \2 \1/g' > "${BN}-dec-24-space-BGR888.txt"
+cat "${BN}-dec-24-space.txt" | sed 's/\(.*\)\ \(.*\)\ \(.*\)/\3 \1 \2/g' > "${BN}-dec-24-space-BRG888.txt"
 
 unset BN
 exit 0

@@ -5,7 +5,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2dec24-space-BGR-txt"
   echo "GiMP color palette (.gpl) to 24bit BGR decimal space text (.txt)"
   echo "usage: gpl2dec24-space-BGR-txt.sh [--help]|filename.gpl"
-  echo "notes: './$BN-dec-24-space-BGRA8888.txt' "
+  echo "notes: './$BN-dec-24-space-BGR888.txt' "
   echo "       will be over written."
   exit 0
 fi

@@ -1,25 +1,24 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2C-all-h"
   echo "Pre-processed text files to C/C++ header files (.h)"
   echo "usage: txt2C-all-h.sh [--help]|[all]"
   echo "notes: the following will be over written, in order"
-  echo "       './(basename(pwd))-C-names-array.h'"
-  echo "       './(basename(pwd))-C-dec-RGB-array.h'"
-  echo "       './(basename(pwd))-C-hex-RGB-array.h'"
-  echo "       './(basename(pwd))-C-printf-RGB-array.h'"
-  echo "       './(basename(pwd))-C-names-dec-RGB-arrays.h'"
-  echo "       './(basename(pwd))-C-names-hex-RGB-arrays.h'"
-  echo "       './(basename(pwd))-C-cNames-printf-RGB-list.h'"
+  echo "       './$BN-C-names-array.h'"
+  echo "       './$BN-C-dec-RGB-array.h'"
+  echo "       './$BN-C-hex-RGB-array.h'"
+  echo "       './$BN-C-printf-RGB-array.h'"
+  echo "       './$BN-C-names-dec-RGB-arrays.h'"
+  echo "       './$BN-C-names-hex-RGB-arrays.h'"
+  echo "       './$BN-C-cNames-printf-RGB-list.h'"
   exit 0
 fi
 if [ ! "$1" = "all" ]; then
   echo "Error: txt2C-all-h.sh [--help]|[all]"
   exit 1
 fi
-BN=`pwd`
-BN=`basename "$BN"`
-PN=`echo "$BN" | sed 's/HW-//g'`
 
 # make sure we have all the required files
 if [ ! -f "./${BN}-names-official.txt" ]; then
@@ -43,6 +42,7 @@ if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
   exit 2
 fi
 
+PN=`echo "$BN" | sed 's/HW-//g'`
 
 ### "./_set_-C-names-array.h"
 LN=`cat "./${BN}-names-official.txt" | wc -L`

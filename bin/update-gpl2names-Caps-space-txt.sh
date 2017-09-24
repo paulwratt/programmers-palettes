@@ -1,9 +1,11 @@
+BN=`pwd`
+BN=`basename "$BN"`
 #!/bin/sh
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2names-Caps-space-txt"
   echo "GiMP color palette (.gpl) to Capitalized official color names text (.txt)"
   echo "usage: gpl2names-Caps-space-txt.sh [--help]|filename.gpl"
-  echo "notes: './(basename(pwd))-names-Caps-space.txt' "
+  echo "notes: './$BN-names-Caps-space.txt' "
   echo "       will be over written."
   exit 0
 fi
@@ -16,8 +18,6 @@ if [ ! "`head -n 1 "$1"`" = "GIMP Palette" ]; then
   exit 2
 fi
 
-BN=`pwd`
-BN=`basename "$BN"`
 RD=`dirname $0`
 
 # has color index and name after color number

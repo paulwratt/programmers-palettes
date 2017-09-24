@@ -1,25 +1,28 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2C-printf-RGB-array-h"
   echo "Pre-processed text to C/C++ header printf hexadecimal RGB array (.h)"
   echo "usage: txt2C-printf-RGB-array-h.sh [--help]|[do]"
-  echo "notes: './(basename(pwd))-C-printf-RGB-array.h' "
+  echo "notes: './$BN-C-printf-RGB-array.h' "
   echo "       will be over written."
+  echo "requires: "
+  echo "       './$BN-hex-24-printf-CAPS.txt'"
   exit 0
 fi
 if [ ! "$1" = "do" ]; then
   echo "Error: txt2C-printf-RGB-array-h.sh [--help]|[do]"
   exit 1
 fi
-BN=`pwd`
-BN=`basename "$BN"`
-PN=`echo "$BN" | sed 's/HW-//g'`
 
 # make sure we have all the required files
 if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
   echo "Error: file not found: './${BN}-hex-24-printf-CAPS.txt'"
   exit 2
 fi
+
+PN=`echo "$BN" | sed 's/HW-//g'`
 
 cat > "./${BN}-C-printf-RGB-array.h" <<EOF
 char pcolors${PN}[][12] = 

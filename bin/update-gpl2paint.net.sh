@@ -1,9 +1,11 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2paint.net"
   echo "GiMP color palette (.gpl) to Paint.Net color palette  (.txt)"
   echo "usage: gpl2paint.net.sh [--help]|filename.gpl"
-  echo "notes: './(basename(pwd)).paint.net.txt' "
+  echo "notes: './$BN.paint.net.txt' "
   echo "       will be over written."
   exit 0
 fi
@@ -16,8 +18,6 @@ if [ ! "`head -n 1 "$1"`" = "GIMP Palette" ]; then
   exit 2
 fi
 
-BN=`pwd`
-BN=`basename "$BN"`
 PN=`echo "$BN" | sed 's/HW-//g'`
 CN=`grep -c -E "^[\ 0-9]" "$1"`
 

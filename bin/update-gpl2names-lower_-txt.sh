@@ -1,9 +1,11 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2names-lower_-txt"
   echo "GiMP color palette (.gpl) to color names lowercase underscore text (.txt)"
   echo "usage: gpl2names-lower_-txt.sh [--help]|filename.gpl"
-  echo "notes: './(basename(pwd))-names-lower_.txt' "
+  echo "notes: './$BN-names-lower_.txt' "
   echo "       will be over written."
   exit 0
 fi
@@ -16,8 +18,6 @@ if [ ! "`head -n 1 "$1"`" = "GIMP Palette" ]; then
   exit 2
 fi
 
-BN=`pwd`
-BN=`basename "$BN"`
 
 # has color index and name after color number
 if [ ! "`grep -P '\t0 - ' "$1"`" = "" ]; then

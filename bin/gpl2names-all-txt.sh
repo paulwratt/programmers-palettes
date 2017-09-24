@@ -1,16 +1,18 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2names-all-txt"
   echo "GiMP color palette (.gpl) to names text files (.txt)"
   echo "usage: gpl2names-all-txt.sh [--help]|filename.gpl"
   echo "notes: the following will be over written, in order"
-  echo "       './(basename(pwd))-names.lst'"
-  echo "       './(basename(pwd))-names-official.txt'"
-  echo "       './(basename(pwd))-names-lower_.txt'"
-  echo "       './(basename(pwd))-names-CAPS_.txt'"
-  echo "       './(basename(pwd))-names-CAPS.txt'"
-  echo "       './(basename(pwd))-names-Caps-space.txt'"
-  echo "       './(basename(pwd))-names-cCaps.txt'"
+  echo "       './$BN-names.lst'"
+  echo "       './$BN-names-official.txt'"
+  echo "       './$BN-names-lower_.txt'"
+  echo "       './$BN-names-CAPS_.txt'"
+  echo "       './$BN-names-CAPS.txt'"
+  echo "       './$BN-names-Caps-space.txt'"
+  echo "       './$BN-names-cCaps.txt'"
   exit 0
 fi
 if [ ! -f "./$1" ]; then
@@ -21,8 +23,7 @@ if [ ! "`head -n 1 "$1"`" = "GIMP Palette" ]; then
   echo "Error: not a GiMP Palette: './$1'"
   exit 2
 fi
-BN=`pwd`
-BN=`basename "$BN"`
+
 RD=`dirname $0`
 
 # has color index and name after color number

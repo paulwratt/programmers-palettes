@@ -1,18 +1,21 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "C2C-cNames-printf-RGB-list-h"
   echo "Pre-processed C/C++ headers combined cColorNames and printf hexadecimal RGB list (.h)"
   echo "usage: C2C-cNames-printf-RGB-list-h.sh [--help]|[do]"
-  echo "notes: './(basename(pwd))-C-cNames-printf-RGB-list.h' "
+  echo "notes: './$BN-C-cNames-printf-RGB-list.h' "
   echo "       will be over written."
+  echo "requires: "
+  echo "       './$BN-C-names-array.h'"
+  echo "       './$BN-hex-24-printf-CAPS.txt'"
   exit 0
 fi
 if [ ! "$1" = "do" ]; then
   echo "Error: C2C-cNames-printf-RGB-list-h.sh [--help]|[do]"
   exit 1
 fi
-BN=`pwd`
-BN=`basename "$BN"`
 
 # make sure we have all the required files
 if [ ! -f "./${BN}-C-names-array.h" ]; then

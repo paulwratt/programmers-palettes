@@ -1,39 +1,44 @@
 #!/bin/sh
+BN=`pwd`
+BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2BAS.COLORS"
   echo "Pre-processed text (.txt) to ShellBASIC (bas) color palettes  (.sh)"
   echo "usage: txt2BAS.COLORS.sh [--help]|[do]"
-  echo "notes: './(basename(pwd)).BAS.COLORS' "
+  echo "notes: './$BN.BAS.COLORS' "
   echo "       will be over written."
+  echo "requires: "
+  echo "       './$BN-names-CAPS_.txt'"
+  echo "       './$BN-dec-24-space-BGR888.txt'"
+  echo "       './$BN-dec-24-semi-colon.txt'"
+  echo "       './$BN-hex-24-CAPS-forward-slash.txt'"
   exit 0
 fi
 if [ ! "$1" = "do" ]; then
   echo "Error: txt2BAS.COLORS.sh [--help]|[do]"
   exit 1
 fi
-BN=`pwd`
-BN=`basename "$BN"`
-PN=`echo "$BN" | sed 's/HW-//g'`
 
 # make sure we have all the required files
 if [ ! -f "./${BN}-names-CAPS_.txt" ]; then
-  echo "Error: file not found: '././${BN}-names-CAPS_.txt'"
+  echo "Error: file not found: './${BN}-names-CAPS_.txt'"
   exit 2
 fi
 if [ ! -f "./${BN}-dec-24-space-BGR888.txt" ]; then
-  echo "Error: file not found: '././${BN}-dec-24-space-BGR888.txt'"
+  echo "Error: file not found: './${BN}-dec-24-space-BGR888.txt'"
   exit 2
 fi
 if [ ! -f "./${BN}-dec-24-semi-colon.txt" ]; then
-  echo "Error: file not found: '././${BN}-dec-24-semi-colon.txt'"
+  echo "Error: file not found: './${BN}-dec-24-semi-colon.txt'"
   exit 2
 fi
 if [ ! -f "./${BN}-hex-24-CAPS-forward-slash.txt" ]; then
-  echo "Error: file not found: '././${BN}-hex-24-forward-slash.txt'"
+  echo "Error: file not found: './${BN}-hex-24-forward-slash.txt'"
   exit 2
 fi
 
-CN=`grep -c -E "^[0-9]" "${BN}-dec-24-semi-colon.txt"`
+PN=`echo "$BN" | sed 's/HW-//g'`
+CN=`grep -c -E "^[0-9]" "./${BN}-dec-24-semi-colon.txt"`
 
 ### setup and check
 cat > "./${BN}.BAS.COLORS.0" <<EOF

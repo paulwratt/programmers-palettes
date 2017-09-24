@@ -49,9 +49,9 @@ if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
 fi
 
 PN=`echo "$BN" | sed 's/HW-//g'`
+LN=`cat "./${BN}-names-official.txt" | wc -L`
 
 ### "./_set_-C-names-array.h"
-LN=`cat "./${BN}-names-official.txt" | wc -L`
 cat > "./${BN}-C-names-array.h" <<EOF
 // the length of the longest color name
 #define ${PN}_NAMES_MAX=${LN}

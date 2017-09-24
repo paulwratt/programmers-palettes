@@ -5,7 +5,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2xterm.colors"
   echo "Pre-processed text (.txt) to ShellBASIC (bas) color palettes  (.sh)"
   echo "usage: txt2xterm.colors.sh [--help]|[do]"
-  echo "notes: './$BN.xterm.colors' "
+  echo "notes: './$BN.xterm.colors.sh' "
   echo "       will be over written."
   echo "requires: "
   echo "       './$BN-names-CAPS_.txt'"
@@ -61,11 +61,11 @@ cat ./temp.2 >> "./${BN}.xterm.colors.0"
 ### the end
 echo "fi" >> "./${BN}.xterm.colors.0"
 
-cat "./${BN}.xterm.colors.0" | sed 's/::/\"/g' > "${BN}.xterm.colors"
+cat "./${BN}.xterm.colors.0" | sed 's/::/\"/g' > "${BN}.xterm.colors.sh"
 rm -f ./temp.*
 rm -f "./${BN}.xterm.colors.0"
 
-echo "$CN colors written to '${BN}.xterm.colors'"
+echo "$CN colors written to '${BN}.xterm.colors.sh'"
 
 unset CN
 unset PN

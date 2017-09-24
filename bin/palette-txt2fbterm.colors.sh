@@ -5,7 +5,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2fbterm.colors"
   echo "Pre-processed text (.txt) to ShellBASIC (bas) color palettes  (.sh)"
   echo "usage: txt2fbterm.colors.sh [--help]|[do]"
-  echo "notes: './$BN.fbterm.colors' "
+  echo "notes: './$BN.fbterm.colors.sh' "
   echo "       will be over written."
   echo "requires: "
   echo "       './$BN-names-CAPS_.txt'"
@@ -60,11 +60,11 @@ cat ./temp.1 >> "./${BN}.fbterm.colors.0"
 ### the end
 echo "fi" >> "./${BN}.fbterm.colors.0"
 
-cat "./${BN}.fbterm.colors.0" | sed 's/::/\"/g' > "${BN}.fbterm.colors"
+cat "./${BN}.fbterm.colors.0" | sed 's/::/\"/g' > "${BN}.fbterm.colors.sh"
 rm -f ./temp.*
 rm -f "./${BN}.fbterm.colors.0"
 
-echo "$CN colors written to '${BN}.fbterm.colors'"
+echo "$CN colors written to '${BN}.fbterm.colors.sh'"
 
 unset CN
 unset PN

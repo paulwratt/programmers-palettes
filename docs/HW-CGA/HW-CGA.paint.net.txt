@@ -1,0 +1,21 @@
+; CGA 16 color palette (2017) for Paint.Net
+; https://github.com/paulwratt/programmers-palettes/docs/HW-CGA/HW-CGA.paint.net.txt
+; save this to:
+;  C:\User\<username>\Documents\paint.net User Files\Palettes\ CGA_16.txt
+;
+000000 ; 0 - black
+0000aa ; 1 - low blue
+00aa00 ; 2 - low green
+00aaaa ; 3 - low cyan
+aa0000 ; 4 - low red
+aa00aa ; 5 - low magenta
+aa5500 ; 6 - brown
+aaaaaa ; 7 - light gray
+555555 ; 8 - dark gray
+5555ff ; 9 - high blue
+55ff55 ; 10 - high green
+55ffff ; 11 - high cyan
+ff5555 ; 12 - high red
+ff55ff ; 13 - high magenta
+ffff55 ; 14 - yellow
+ffffff ; 15 - white

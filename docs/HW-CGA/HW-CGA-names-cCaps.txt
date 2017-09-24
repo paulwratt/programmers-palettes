@@ -1,0 +1,16 @@
+cBlack
+cLowBlue
+cLowGreen
+cLowCyan
+cLowRed
+cLowMagenta
+cBrown
+cLightGray
+cDarkGray
+cHighBlue
+cHighGreen
+cHighCyan
+cHighRed
+cHighMagenta
+cYellow
+cWhite

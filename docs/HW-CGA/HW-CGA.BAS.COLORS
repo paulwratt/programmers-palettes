@@ -1,0 +1,86 @@
+#!/bin/sh
+. .SETUP
+if [ "$basCOLORS_DONE" = "1" ]; then
+if [ "$BASIC_COLORS" = "" ]; then
+
+    # (MSX) colors in BAS remap setaf/setab to setf/setb order
+    #       this means # order of 1st 16: t_COLORs != fb_COLORs
+    #         static int map[8]={ 0,4,2,6,1,5,3,7 };
+
+    # NOTE: sometimes you need screen colors AND actual colors
+    #       color numbers should match ~/.bashrc
+    #       color names are HTML names, plus some extras (eg BROWN)
+    #       fb_COLORs are poked directly in to framebuffer using dd
+    #       t_COLORs can be passed through: set 256 color tput/ESC code
+    #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
+
+    # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
+    t_COLOR0="0 0 0";           t_BLACK="0 0 0";
+    t_COLOR1="170 0 0";         t_LOW_BLUE="170 0 0";
+    t_COLOR2="0 170 0";         t_LOW_GREEN="0 170 0";
+    t_COLOR3="170 170 0";       t_LOW_CYAN="170 170 0";
+    t_COLOR4="0 0 170";         t_LOW_RED="0 0 170";
+    t_COLOR5="170 0 170";       t_LOW_MAGENTA="170 0 170";
+    t_COLOR6="0 85 170";        t_BROWN="0 85 170";
+    t_COLOR7="170 170 170";     t_LIGHT_GRAY="170 170 170";
+    t_COLOR8="85 85 85";        t_DARK_GRAY="85 85 85";
+    t_COLOR9="255 85 85";       t_HIGH_BLUE="255 85 85";
+    t_COLOR10="85 255 85";      t_HIGH_GREEN="85 255 85";
+    t_COLOR11="255 255 85";     t_HIGH_CYAN="255 255 85";
+    t_COLOR12="85 85 255";      t_HIGH_RED="85 85 255";
+    t_COLOR13="255 85 255";     t_HIGH_MAGENTA="255 85 255";
+    t_COLOR14="85 255 255";     t_YELLOW="85 255 255";
+    t_COLOR15="255 255 255";    t_WHITE="255 255 255";
+
+  if echo "$TERM" | grep "fbterm" > /dev/null; then
+    t_SETCOLOR='\033[3;%d;%s}';  # for printf
+    # fbterm uses decimal values in tput/ESC codes for 256 colors
+    # COLOR 0 is the transparencey (background image) color
+    t_COLOR0="0;0;0";           t_BLACK="0;0;0";
+    t_COLOR1="0;0;170";         t_LOW_BLUE="0;0;170";
+    t_COLOR2="0;170;0";         t_LOW_GREEN="0;170;0";
+    t_COLOR3="0;170;170";       t_LOW_CYAN="0;170;170";
+    t_COLOR4="170;0;0";         t_LOW_RED="170;0;0";
+    t_COLOR5="170;0;170";       t_LOW_MAGENTA="170;0;170";
+    t_COLOR6="170;85;0";        t_BROWN="170;85;0";
+    t_COLOR7="170;170;170";     t_LIGHT_GRAY="170;170;170";
+    t_COLOR8="85;85;85";        t_DARK_GRAY="85;85;85";
+    t_COLOR9="85;85;255";       t_HIGH_BLUE="85;85;255";
+    t_COLOR10="85;255;85";      t_HIGH_GREEN="85;255;85";
+    t_COLOR11="85;255;255";     t_HIGH_CYAN="85;255;255";
+    t_COLOR12="255;85;85";      t_HIGH_RED="255;85;85";
+    t_COLOR13="255;85;255";     t_HIGH_MAGENTA="255;85;255";
+    t_COLOR14="255;255;85";     t_YELLOW="255;255;85";
+    t_COLOR15="255;255;255";    t_WHITE="255;255;255";
+
+  else
+    t_SETCOLOR='\033]4;%d;rgb:%s';  # for printf
+    # xterm-color256: xterm screen rxvt urxtv gnome lxterminal tmux
+    # xterm uses hexidecimal values in tput/ESC codes for 256 colors
+    t_COLOR0="00/00/00";        t_BLACK="00/00/00";
+    t_COLOR1="00/00/AA";        t_LOW_BLUE="00/00/AA";
+    t_COLOR2="00/AA/00";        t_LOW_GREEN="00/AA/00";
+    t_COLOR3="00/AA/AA";        t_LOW_CYAN="00/AA/AA";
+    t_COLOR4="AA/00/00";        t_LOW_RED="AA/00/00";
+    t_COLOR5="AA/00/AA";        t_LOW_MAGENTA="AA/00/AA";
+    t_COLOR6="AA/55/00";        t_BROWN="AA/55/00";
+    t_COLOR7="AA/AA/AA";        t_LIGHT_GRAY="AA/AA/AA";
+    t_COLOR8="55/55/55";        t_DARK_GRAY="55/55/55";
+    t_COLOR9="55/55/FF";        t_HIGH_BLUE="55/55/FF";
+    t_COLOR10="55/FF/55";       t_HIGH_GREEN="55/FF/55";
+    t_COLOR11="55/FF/FF";       t_HIGH_CYAN="55/FF/FF";
+    t_COLOR12="FF/55/55";       t_HIGH_RED="FF/55/55";
+    t_COLOR13="FF/55/FF";       t_HIGH_MAGENTA="FF/55/FF";
+    t_COLOR14="FF/FF/55";       t_YELLOW="FF/FF/55";
+    t_COLOR15="FF/FF/FF";       t_WHITE="FF/FF/FF";
+  fi
+else
+  if [ ! -f "$BASIC_COLORS" ]; then
+    echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
+  else
+    . "$BASIC_COLORS"
+  fi
+fi
+fi
+export basCOLORS_DONE=1
+exit 0

@@ -1,0 +1,16 @@
+black
+low_blue
+low_green
+low_cyan
+low_red
+low_magenta
+brown
+light_gray
+dark_gray
+high_blue
+high_green
+high_cyan
+high_red
+high_magenta
+yellow
+white

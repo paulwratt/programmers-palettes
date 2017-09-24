@@ -1,0 +1,16 @@
+Black 
+Low Blue 
+Low Green 
+Low Cyan 
+Low Red 
+Low Magenta 
+Brown 
+Light Gray 
+Dark Gray 
+High Blue 
+High Green 
+High Cyan 
+High Red 
+High Magenta 
+Yellow 
+White 

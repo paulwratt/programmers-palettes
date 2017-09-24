@@ -13,6 +13,12 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './$BN-C-names-dec-RGB-arrays.h'"
   echo "       './$BN-C-names-hex-RGB-arrays.h'"
   echo "       './$BN-C-cNames-printf-RGB-list.h'"
+  echo "requires: "
+  echo "       './$BN-names-official.txt'"
+  echo "       './$BN-names-cCaps.txt'"
+  echo "       './$BN-dec-24-comma-space.txt'"
+  echo "       './$BN-hex-24-0x-comma-space.txt'"
+  echo "       './$BN-hex-24-printf-CAPS.txt'"
   exit 0
 fi
 if [ ! "$1" = "all" ]; then

@@ -20,23 +20,31 @@ This folder contains the shell script executables that manipulate data output to
 Current utilities (in order of use):
 * assist
     * **as-capitalised-words.sh** - used to generate "Caps Words" from "caps words"
+    * **as-dec-2-binary.sh** - used to generate "binary" from "decimal"
+    * **as-RGB-dec-2-bytes.sh** - used to generate "bytes" from "RGB decimals"
 * gpl2dec24-all-txt.sh
     * **update-gpl2dec24-space-lst.sh** - space aligned decimal RGB list (can generate .gpl from these)
     * **update-gpl2dec24-space-comma-txt.sh** - space aligned comma seperated decimal RGB values (easy to read)
     * **update-gpl2dec24-comma-txt.sh** - comma seperated decimal RGB values (compact, eg. CSS rgb() arguments)
     * **update-gpl2dec24-comma-space-txt.sh** - comma seperated spaced decimal RGB values (eg. C argument list)
+    * **update-gpl2dec24-semi-colon-txt.sh** - semi-colon seperated spaced decimal RGB values (eg. fbterm ESCape codes)
     * **update-gpl2dec24-space-txt.sh** - space seperated decimal RGB values (used to generate another palette/format)
+    * **update-gpl2dec24-space-BRG-txt.sh** - space seperated decimal BRG values (used to generate another palette/format)
+    * **update-gpl2dec24-space-BGR-txt.sh** - space seperated decimal BGR values (used to generate another palette/format)
+    * **update-gpl2dec24-space-BGRA-txt.sh** - space seperated decimal BGRA values (used to generate another palette/format)
 * gpl2hex24-all-txt.sh
     * **update-gpl2hex24-printf-txt.sh** - printf RGB hex values for printf functions
     * **update-gpl2hex24-space-txt.sh** - space seperated 8bit byte RGB hex values (used to generate other RGBA formats)
     * **update-gpl2hex24-0x-comma-space-txt.sh** - space seperated 8bit byte RGB hex values (used to generate other RGBA formats)
     * **update-gpl2hex24-txt.sh** - 24bit word RGB hex values
     * **update-gpl2hex24-html-txt.sh** - 6 digit HTML #RRGGBB hex values
+    * **update-gpl2hex24-html-CAPS-txt.sh** - 6 digit capitalized HTML #RRGGBB hex values
     * **update-gpl2hex24-CAPS-space-txt.sh** - capitalized space seperated 8bit byte RGB hex values (used to generate another palette/format)
     * **update-gpl2hex24-CAPS-txt.sh** - capitalized 24bit word RGB hex values
     * **update-gpl2hex24-CAPS-forward-slash.sh** - capitalized 24bit word RGB hex xterm ESC sequences
-    * **update-gpl2hex24-printf-CAPS-txt.sh** - capitalized printf RGB hex values for printf functions
+    * **update-gpl2hex24-printf-CAPS-BGR-txt.sh** - capitalized printf BGR hex values for printf functions
     * **update-gpl2hex32-printf-CAPS-BGRA-txt.sh** - capitalized printf BGRA8888 hex values for printf functions
+    * **update-gpl2hex24-printf-CAPS-RGB-txt.sh** - capitalized printf RGB hex values for printf functions
     * **update-gpl2hex32-printf-CAPS-RGBA-txt.sh** - capitalized printf RGBA8888 hex values for printf functions
 * gpl2names-all-txt.sh
     * **update-gpl2names-lst.sh** - raw dump of GiMP palette mouse over text (formated "number - name" lowercase)
@@ -47,10 +55,13 @@ Current utilities (in order of use):
     * **update-gpl2names-Caps-space-txt.sh** - Capialized Space Seperated color names
     * **update-gpl2names-cCaps-txt.sh** - cCapsColor compacted names (useful as variable names in programs)
 * gpl2palette-files.sh
-    * **update-gpl2grafx2.pal.sh** - generates 256 JASC palette for Grafx2 (or Graphics Gale)
-    * **update-gpl2paint.net.sh** - generates Paint.Net palette files (optionally with names and numbers, if present in .gpl)
-    * **update-txt2BAS.COLORS.sh** - generates ShellBASIC PSET/PRESET (Bas) palette file (fbterm + xterm + 32bit BGRA printf for framebuffer)
-    * **update-txt2bas.colors.bas.sh** - generates ANSI BASIC (.bas) palette file (fbterm + xterm + 32bit BGRA printf for framebuffer)
+    * **palette-gpl2grafx2.pal.sh** - generates 256 color JASC-PAL palette for Paintshop Pro, Grafix2, Graphics Gale
+    * **palette-gpl2paint.net.sh** - generates Paint.Net palette files (optionally with names and numbers, if present in .gpl)
+    * **palette-txt2BAS.COLORS.sh** - generates ShellBASIC PSET/PRESET (Bas) palette file (fbterm + xterm + 32bit BGRA printf for framebuffer)
+    * **palette-txt2bas.colors.bas.sh** - generates ANSI BASIC (.bas) palette file (fbterm + xterm + 32bit BGRA printf for framebuffer)
+    * **palette-txt2fbterm.colors.sh** - generates palette file for fbterm (fbterm ESCape codes)
+    * **palette-txt2photoshop.act.sh** - generates 256 color palette binary file for Adobe Photoshop
+    * **palette-txt2xterm.colors.sh** - generates palette file for xterm (xterm ESCape codes)
 * txt2C-all-h.sh
     * **update-txt2C-dec-RGB-array-h.sh** - generates decimal RGB array
     * **update-txt2C-hex-RGB-array-h.sh** - generates hexadecimal RGB array
@@ -59,6 +70,12 @@ Current utilities (in order of use):
     * **update-C2C-cNames-printf-RGB-list-h.sh** - gererate cColorNames hexadecimal printf list
     * **update-C2C-names-dec-RGB-arrays-h.sh** - makes color names array and decimal RGB array in one file
     * **update-C2C-names-hex-RGB-arrays-h.sh** - makes color names array and hexadecimal RGB array in one file
+* txt2html-all.sh
+    * **html-txt2html.sh** - generates html content for main information page
+    * **html-txt2html-decimal.sh** - generates html content for decimal values
+    * **html-txt2html-hex.sh** - generates html content for hexidecimal values
+    * **html-txt2html-names.sh** - generates html content for names lists
+    * **html-txt2html-palettes.sh** - generates html content for palettes
 
 
 [denilsonsa]: https://github.com/denilsonsa

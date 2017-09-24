@@ -116,6 +116,19 @@ RD=`dirname $0`
 PN=`echo "$BN" | sed 's/HW-//g'`
 CN=`grep -c -E "^[0-9]" "./${BN}-dec-24-comma-space.txt"`
 
+### "./index.html" ###
+cat > "./index.html" <<EOF
+<html>
+<head>
+<title>Programmers Palettes: ${BN}</title>
+<meta http-equiv="refresh" content="0;URL='./${BN}.html'" />
+</head>
+<body>
+redirect to <a href="./${BN}.html">${BN}</a>
+</body>
+</html>
+EOF
+
 ### temp file html head ###
 cat > "./${BN}.html.0" <<EOF
 <style>

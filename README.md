@@ -23,11 +23,11 @@ Versions are tagged date encoded with **one (1) _set_**. If I get 30 _sets_ in o
 
 * palettes:
     * **170903-HW-MSX** (16 color palette)
-    * **(next) HW-CGA** (16 color palette)
+    * **170925 HW-CGA** (16 color palette)
+    * **(next)-Arne16v20** (customised Commodore 64 style restricted palette)
 * TODO:
     * (later) DawnBringer16 (16 32bit color restricted palette)
     * (later) DawnBringer32 (32 32bit color restricted palette)
-    * (later) Arne16v20 (customised Commodore 64 style restricted palette)
     * (later) Pantone (256 color palette)
     * (later) HW-Atari-ST (16 color default palette)
     * (later) HW-Atari-Falcon (256 color default palette)

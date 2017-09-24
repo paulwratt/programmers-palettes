@@ -9,7 +9,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       will be over written."
   echo "requires: "
   echo "       './$BN-C-names-array.h'"
-  echo "       './$BN-hex-24-printf-CAPS.txt'"
+  echo "       './$BN-hex-24-printf-CAPS-RGB888.txt'"
   exit 0
 fi
 if [ ! "$1" = "do" ]; then
@@ -22,15 +22,15 @@ if [ ! -f "./${BN}-C-names-array.h" ]; then
   echo "Error: file not found: '././${BN}-C-names-array.h'"
   exit 2
 fi
-if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
-  echo "Error: file not found: '././${BN}-hex-24-printf-CAPS.txt'"
+if [ ! -f "./${BN}-hex-24-printf-CAPS-RGB888.txt" ]; then
+  echo "Error: file not found: '././${BN}-hex-24-printf-CAPS-RGB888.txt'"
   exit 2
 fi
 
 echo "// ${BN}" > "${BN}-C-cNames-printf-RGB-list.h"
 LN=`cat "./${BN}-names-cCaps.txt" | wc -L`
 cat "./${BN}-names-cCaps.txt" | xargs printf "\t%-${LN}s \n" > temp.1
-cat "./${BN}-hex-24-printf-CAPS.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
+cat "./${BN}-hex-24-printf-CAPS-RGB888.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
 paste -d= temp.1 temp.2 > temp.0
 cat temp.0 | sed 's/.x/\\x/g' >> "${BN}-C-cNames-printf-RGB-list.h"
 rm -f temp.0

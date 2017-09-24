@@ -18,7 +18,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './$BN-names-cCaps.txt'"
   echo "       './$BN-dec-24-comma-space.txt'"
   echo "       './$BN-hex-24-0x-comma-space.txt'"
-  echo "       './$BN-hex-24-printf-CAPS.txt'"
+  echo "       './$BN-hex-24-printf-CAPS-RGB888.txt'"
   exit 0
 fi
 if [ ! "$1" = "all" ]; then
@@ -43,8 +43,8 @@ if [ ! -f "./${BN}-hex-24-0x-comma-space.txt" ]; then
   echo "Error: file not found: './${BN}-hex-24-0x-comma-space.txt'"
   exit 2
 fi
-if [ ! -f "./${BN}-hex-24-printf-CAPS.txt" ]; then
-  echo "Error: file not found: './${BN}-hex-24-printf-CAPS.txt'"
+if [ ! -f "./${BN}-hex-24-printf-CAPS-RGB888.txt" ]; then
+  echo "Error: file not found: './${BN}-hex-24-printf-CAPS-RGB888.txt'"
   exit 2
 fi
 
@@ -91,7 +91,7 @@ char pcolors${PN}[][12] =
 {
 
 EOF
-cat "./${BN}-hex-24-printf-CAPS.txt" | sed 's/\(.*\)/\t{ "\1" },/g' >> "./${BN}-C-printf-RGB-array.h"
+cat "./${BN}-hex-24-printf-CAPS-RGB888.txt" | sed 's/\(.*\)/\t{ "\1" },/g' >> "./${BN}-C-printf-RGB-array.h"
 printf '\t{ "\x0\x0\x0" } // delete this line, and last comma above\n' >> "./${BN}-C-printf-RGB-array.h"
 printf '};\n' >> "./${BN}-C-printf-RGB-array.h"
 
@@ -112,7 +112,7 @@ cat "./${BN}-C-hex-RGB-array.h" >> "./${BN}-C-names-hex-RGB-arrays.h"
 echo "// ${BN}" > "${BN}-C-cNames-printf-RGB-list.h"
 LN=`cat "./${BN}-names-cCaps.txt" | wc -L`
 cat "./${BN}-names-cCaps.txt" | xargs printf "\t%-${LN}s \n" > temp.1
-cat "./${BN}-hex-24-printf-CAPS.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
+cat "./${BN}-hex-24-printf-CAPS-RGB888.txt" | sed 's/\\x/.x/g' | sed 's/\(.*\)/ "\1";/g' > temp.2
 paste -d= temp.1 temp.2 > temp.0
 cat temp.0 | sed 's/.x/\\x/g' >> "${BN}-C-cNames-printf-RGB-list.h"
 rm -f temp.0

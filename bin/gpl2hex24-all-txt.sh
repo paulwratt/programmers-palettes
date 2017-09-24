@@ -17,6 +17,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './$BN-hex-24-CAPS.txt' "
   echo "       './$BN-hex-24-printf-CAPS-RGB888.txt' "
   echo "       './$BN-hex-32-printf-CAPS-RGBA8888.txt' "
+  echo "       './$BN-hex-24-printf-CAPS-BGR888.txt' "
   echo "       './$BN-hex-32-printf-CAPS-BGRA8888.txt' "
   exit 0
 fi
@@ -40,6 +41,8 @@ cat "${BN}-hex-24-space.txt" | tr \  / > "${BN}-hex-24-CAPS-forward-slash.txt"
 cat "${BN}-hex-24.txt" | tr [a-f] [A-F] > "${BN}-hex-24-CAPS.txt"
 cat "${BN}-hex-24-printf.txt" | tr [a-f] [A-F] > "${BN}-hex-24-printf-CAPS.txt"
 cat "${BN}-hex-24-printf-CAPS-RGB888.txt" | sed 's/\(.*\)/\1\\x00/g' > "${BN}-hex-32-printf-CAPS-RGBA8888.txt"
+cat "${BN}-hex-24-space.txt" | tr [a-f] [A-F] | sed 's/\(.*\)\ \(.*\)\ \(.*\)/\\x\3\\x\2\\x\1/g' > "${BN}-hex-24-printf-CAPS-BGR888.txt"
+cat "${BN}-hex-24-space.txt" | tr [a-f] [A-F] | sed 's/\(.*\)\ \(.*\)\ \(.*\)/\\x\3\\x\2\\x\1\\x00/g' > "${BN}-hex-24-printf-CAPS-BGRA8888.txt"
 
 unset BN
 exit 0

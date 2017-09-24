@@ -5,7 +5,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "gpl2hex24-printf-CAPS-txt"
   echo "GiMP color palette (.gpl) to captialized 24bit RGB hexadecimal printf text (.txt)"
   echo "usage: gpl2hex24-printf-CAPS-txt.sh [--help]|filename.gpl"
-  echo "notes: './$BN-hex-24-printf-CAPS.txt' "
+  echo "notes: './$BN-hex-24-printf-CAPS-RGB.txt' "
   echo "       will be over written."
   exit 0
 fi
@@ -18,7 +18,7 @@ if [ ! "`head -n 1 "$1"`" = "GIMP Palette" ]; then
   exit 2
 fi
 
-grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf '\\x%02x\\x%02x\\x%02x\n' | tr [a-f] [A-F] > "${BN}-hex-24-printf-CAPS.txt"
+grep -E "^[\ 0-9]" "$1" | cut --output-delimiter=\  --characters=1-3,5-7,9-11 | xargs printf '\\x%02x\\x%02x\\x%02x\n' | tr [a-f] [A-F] > "${BN}-hex-24-printf-CAPS-RGB.txt"
 
 unset BN
 exit 0

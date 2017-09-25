@@ -676,7 +676,7 @@ cat "./${BN}.html.2" >> "./${BN}-palettes.html"
 ### CSS rgb(R,G,B); ###
 for I in `seq 1 $CN`; do
   J=$(( $I - 1 ))
-  echo "rgb(`cat "./${BN}-dec-24-comma.txt" | head -n $I | tail -n 1`);<br>" >> "./${BN}-decimal.html"
+  echo "rgb(`cat "./${BN}-dec-24-comma.txt" | head -n $I | tail -n 1`);<br>" >> "./${BN}-palettes.html"
 done
 
 ### the end ###

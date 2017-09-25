@@ -78,8 +78,7 @@ table.values tr td {
 </style>
 </head>
 <body>
-<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
-&nbsp;<br>
+<h2><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h2>
 $PN color palette for programmers<br>
 hardware fixed index palette<br>
 <!-- custom/optimized fixed index palette</br> -->

@@ -709,7 +709,7 @@ _
 </html>
 EOF
 
-rm -f "./${BN}.html.?"
+rm -f ./${BN}.html.*
 
 echo "$CN colors processed"
 

@@ -664,7 +664,7 @@ cat "./${BN}.html.2" >> "./${BN}-palettes.html"
 ### xterm ###
 for I in `seq 1 $CN`; do
   J=$(( $I - 1 ))
-  echo "ff`cat "./${BN}-hex-24-forward-slash.txt" | head -n $I | tail -n 1`<br>" >> "./${BN}-palettes.html"
+  echo "ff`cat "./${BN}-hex-24-CAPS-forward-slash.txt" | head -n $I | tail -n 1`<br>" >> "./${BN}-palettes.html"
 done
 cat "./${BN}.html.2" >> "./${BN}-palettes.html"
 

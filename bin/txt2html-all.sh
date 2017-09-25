@@ -150,7 +150,7 @@ table.values tr td {
 </style>
 </head>
 <body>
-<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
+<h2><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h2>
 $PN color palette for programmers<br>
 hardware fixed index palette<br>
 <!-- custom/optimized fixed index palette</br> -->
@@ -159,7 +159,6 @@ hardware fixed index palette<br>
 EOF
 
 ### html color table with mouse overs ###
-printf "" > "./${BN}.html.0"
 for I in `seq 1 $CN`; do
   J=$(( $I - 1 ))
   HC=`cat "./${BN}-hex-24-html-CAPS.txt" | head -n $I | tail -n 1`

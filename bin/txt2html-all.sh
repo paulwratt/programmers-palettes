@@ -269,7 +269,7 @@ cat > "./${BN}-decimal.html" <<EOF
 <title>$PN color palette decimal</title>
 EOF
 cat "./${BN}.html.0" >> "./${BN}-decimal.html"
-cat >> "./${BN}.html" <<EOF
+cat >> "./${BN}-decimal.html" <<EOF
 values : <a href="${BN}.html">main</a> : <a href="${BN}-hex.html">hex</a> : <a href="${BN}-names.html">names</a> : <a href="${BN}-palettes.html">palettes</a><br>
 &nbsp;<br>
 EOF

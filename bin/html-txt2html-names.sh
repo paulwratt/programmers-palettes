@@ -79,8 +79,10 @@ table.values tr td {
 </style>
 </head>
 <body>
-&nbsp;<br>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>&nbsp;<br>
 $PN color palette as decimal values<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF

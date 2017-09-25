@@ -78,8 +78,11 @@ table.values tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 $PN color palette for programmers<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF
@@ -152,12 +155,12 @@ echo "</td><td nowrap>" >> "./${BN}.html"
 ### palette downloads ###
 cat >> "./${BN}.html" <<EOF
 <a href="./${BN}.gpl">${BN}.gpl</a> (GiMP)<br>
-<a href="./${BN}.grafx2-JASC.pal">${BN}.grafx2-JASC.pal</a> (JASC-PAL)<br>
+<a href="./${BN}.grafx2.JASC.pal">${BN}.grafx2.JASC.pal</a> (JASC-PAL)<br>
 <a href="./${BN}.paint.net.txt">${BN}.paint.net.txt</a> (Paint.Net)<br>
 <a href="./${BN}.photoshop.act">${BN}.photoshop.act</a> (Adobe Photoshop)<br>
 <a href="./${BN}.BAS.COLORS">${BN}.BAS.COLORS</a> (ShellBASIC)<br>
-<a href="./${BN}-fbterm-${CN}colors.sh">${BN}-fbterm-${CN}colors.sh</a><br>
-<a href="./${BN}-xterm-${CN}colors.sh">${BN}-xterm-${CN}colors.sh</a><br>
+<a href="./${BN}.fbterm.${CN}colors.sh">${BN}.fbterm.${CN}colors.sh</a><br>
+<a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 EOF
 
 ### the end ###

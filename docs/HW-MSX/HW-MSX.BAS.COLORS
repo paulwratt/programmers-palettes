@@ -1,0 +1,86 @@
+#!/bin/sh
+. .SETUP
+if [ "$basCOLORS_DONE" = "1" ]; then
+if [ "$BASIC_COLORS" = "" ]; then
+
+    # (MSX) colors in BAS remap setaf/setab to setf/setb order
+    #       this means # order of 1st 16: t_COLORs != fb_COLORs
+    #         static int map[8]={ 0,4,2,6,1,5,3,7 };
+
+    # NOTE: sometimes you need screen colors AND actual colors
+    #       color numbers should match ~/.bashrc
+    #       color names are HTML names, plus some extras (eg BROWN)
+    #       fb_COLORs are poked directly in to framebuffer using dd
+    #       t_COLORs can be passed through: set 256 color tput/ESC code
+    #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
+
+    # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
+    t_COLOR0="0 0 0";           t_TRANSPARENT="0 0 0";
+    t_COLOR1="0 0 0";           t_BLACK="0 0 0";
+    t_COLOR2="73 184 62";       t_MEDIUM_GREEN="73 184 62";
+    t_COLOR3="125 208 116";     t_LIGHT_GREEN="125 208 116";
+    t_COLOR4="224 85 89";       t_DARK_BLUE="224 85 89";
+    t_COLOR5="241 118 128";     t_LIGHT_BLUE="241 118 128";
+    t_COLOR6="81 94 185";       t_DARK_RED="81 94 185";
+    t_COLOR7="239 219 101";     t_CYAN="239 219 101";
+    t_COLOR8="89 101 219";      t_MEDIUM_RED="89 101 219";
+    t_COLOR9="125 137 255";     t_LIGHT_RED="125 137 255";
+    t_COLOR10="94 195 204";     t_DARK_YELLOW="94 195 204";
+    t_COLOR11="135 208 222";    t_LIGHT_YELLOW="135 208 222";
+    t_COLOR12="65 162 58";      t_DARK_GREEN="65 162 58";
+    t_COLOR13="181 102 183";    t_MAGENTA="181 102 183";
+    t_COLOR14="204 204 204";    t_GRAY="204 204 204";
+    t_COLOR15="255 255 255";    t_WHITE="255 255 255";
+
+  if echo "$TERM" | grep "fbterm" > /dev/null; then
+    t_SETCOLOR='\033[3;%d;%s}';  # for printf
+    # fbterm uses decimal values in tput/ESC codes for 256 colors
+    # COLOR 0 is the transparencey (background image) color
+    t_COLOR0="0;0;0";           t_TRANSPARENT="0;0;0";
+    t_COLOR1="0;0;0";           t_BLACK="0;0;0";
+    t_COLOR2="62;184;73";       t_MEDIUM_GREEN="62;184;73";
+    t_COLOR3="116;208;125";     t_LIGHT_GREEN="116;208;125";
+    t_COLOR4="89;85;224";       t_DARK_BLUE="89;85;224";
+    t_COLOR5="128;118;241";     t_LIGHT_BLUE="128;118;241";
+    t_COLOR6="185;94;81";       t_DARK_RED="185;94;81";
+    t_COLOR7="101;219;239";     t_CYAN="101;219;239";
+    t_COLOR8="219;101;89";      t_MEDIUM_RED="219;101;89";
+    t_COLOR9="255;137;125";     t_LIGHT_RED="255;137;125";
+    t_COLOR10="204;195;94";     t_DARK_YELLOW="204;195;94";
+    t_COLOR11="222;208;135";    t_LIGHT_YELLOW="222;208;135";
+    t_COLOR12="58;162;65";      t_DARK_GREEN="58;162;65";
+    t_COLOR13="183;102;181";    t_MAGENTA="183;102;181";
+    t_COLOR14="204;204;204";    t_GRAY="204;204;204";
+    t_COLOR15="255;255;255";    t_WHITE="255;255;255";
+
+  else
+    t_SETCOLOR='\033]4;%d;rgb:%s';  # for printf
+    # xterm-color256: xterm screen rxvt urxtv gnome lxterminal tmux
+    # xterm uses hexidecimal values in tput/ESC codes for 256 colors
+    t_COLOR0="00/00/00";        t_TRANSPARENT="00/00/00";
+    t_COLOR1="00/00/00";        t_BLACK="00/00/00";
+    t_COLOR2="3E/B8/49";        t_MEDIUM_GREEN="3E/B8/49";
+    t_COLOR3="74/D0/7D";        t_LIGHT_GREEN="74/D0/7D";
+    t_COLOR4="59/55/E0";        t_DARK_BLUE="59/55/E0";
+    t_COLOR5="80/76/F1";        t_LIGHT_BLUE="80/76/F1";
+    t_COLOR6="B9/5E/51";        t_DARK_RED="B9/5E/51";
+    t_COLOR7="65/DB/EF";        t_CYAN="65/DB/EF";
+    t_COLOR8="DB/65/59";        t_MEDIUM_RED="DB/65/59";
+    t_COLOR9="FF/89/7D";        t_LIGHT_RED="FF/89/7D";
+    t_COLOR10="CC/C3/5E";       t_DARK_YELLOW="CC/C3/5E";
+    t_COLOR11="DE/D0/87";       t_LIGHT_YELLOW="DE/D0/87";
+    t_COLOR12="3A/A2/41";       t_DARK_GREEN="3A/A2/41";
+    t_COLOR13="B7/66/B5";       t_MAGENTA="B7/66/B5";
+    t_COLOR14="CC/CC/CC";       t_GRAY="CC/CC/CC";
+    t_COLOR15="FF/FF/FF";       t_WHITE="FF/FF/FF";
+  fi
+else
+  if [ ! -f "$BASIC_COLORS" ]; then
+    echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
+  else
+    . "$BASIC_COLORS"
+  fi
+fi
+fi
+export basCOLORS_DONE=1
+exit 0

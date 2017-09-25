@@ -150,8 +150,11 @@ table.values tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 $PN color palette for programmers<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF
@@ -241,12 +244,12 @@ cat "./${BN}.html.2" >> "./${BN}.html"
 ### palette downloads ###
 cat >> "./${BN}.html" <<EOF
 <a href="./${BN}.gpl">${BN}.gpl</a> (GiMP)<br>
-<a href="./${BN}.grafx2-JASC.pal">${BN}.grafx2-JASC.pal</a> (JASC-PAL)<br>
+<a href="./${BN}.grafx2.JASC.pal">${BN}.grafx2.JASC.pal</a> (JASC-PAL)<br>
 <a href="./${BN}.paint.net.txt">${BN}.paint.net.txt</a> (Paint.Net)<br>
 <a href="./${BN}.photoshop.act">${BN}.photoshop.act</a> (Adobe Photoshop)<br>
 <a href="./${BN}.BAS.COLORS">${BN}.BAS.COLORS</a> (ShellBASIC)<br>
-<a href="./${BN}-fbterm-colors.sh">${BN}-fbterm-colors.sh</a><br>
-<a href="./${BN}-xterm-colors.sh">${BN}-xterm-colors.sh</a><br>
+<a href="./${BN}.fbterm.${CN}colors.sh">${BN}.fbterm.${CN}colors.sh</a><br>
+<a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td>
 </tr>
 </table>
@@ -361,7 +364,7 @@ _
 <a href="./${BN}-dec-24-space-BGR888.txt">${BN}-dec-24-space-BGR888.txt</a><br>
 <a href="./${BN}-dec-32-space-BGRA8888.txt">${BN}-dec-32-space-BGRA8888.txt</a><br>
 <a href="./${BN}-dec-24-space-BRG888.txt">${BN}-dec-24-space-BRG888.txt</a><br>
-<a href="./${BN}-fbterm-colors.sh">${BN}-fbterm-colors.sh</a><br>
+<a href="./${BN}.fbterm.${CN}colors.sh">${BN}.fbterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
 <p>
@@ -495,7 +498,7 @@ _
 <a href="./${BN}-hex-32-printf-CAPS-RGBA8888.txt">${BN}-hex-32-printf-CAPS-RGBA8888.txt</a><br>
 <a href="./${BN}-hex-24-printf-CAPS-BGR888.txt">${BN}-hex-24-printf-CAPS-BGR888.txt</a><br>
 <a href="./${BN}-hex-32-printf-CAPS-BGRA8888.txt">${BN}-hex-32-printf-CAPS-BGRA8888.txt</a><br>
-<a href="./${BN}-xterm-colors.sh">${BN}-xterm-colors.sh</a><br>
+<a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
 <p>
@@ -692,9 +695,11 @@ _
 <a href="./${BN}-C-names-hex-RGB-arrays.h">${BN}-C-names-hex-RGB-arrays.h</a><br>
 <a href="./${BN}.gpl">${BN}.gpl</a><br>
 <a href="./${BN}.BAS.COLORS">${BN}.BAS.COLORS</a><br>
-<a href="./${BN}.grafx2-JASC.pal">${BN}.grafx2-JASC.pal</a><br>
+<a href="./${BN}.grafx2.JASC.pal">${BN}.grafx2.JASC.pal</a><br>
 <a href="./${BN}.paint.net.txt">${BN}.paint.net.txt</a><br>
 <a href="./${BN}.photoshop.act">${BN}.photoshop.act</a><br>
+<a href="./${BN}.fbterm.${CN}colors.sh">${BN}.fbterm.${CN}colors.sh</a><br>
+<a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
 <p>

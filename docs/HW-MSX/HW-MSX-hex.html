@@ -20,8 +20,11 @@ table.values tbody tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 MSX color palette as hexidecimal values<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr><td align=center valign=middle bgcolor="#000000" width=32 height=32 class="color" style="background-color:#000000" title="0 - transparent
 #000000
@@ -57,7 +60,8 @@ MSX color palette as hexidecimal values<br>
 #FFFFFF
 255, 255, 255">15</td></tr></tbody></table>
 &nbsp;<br>
-NOTES: fbterm256 decimal values, xterm256 hexidecimal values<br>
+values : <a href="HW-MSX.html">main</a> : <a href="HW-MSX-decimal.html">decimal</a> : <a href="HW-MSX-names.html">names</a> : <a href="HW-MSX-palettes.html">palettes</a><br>
+&nbsp;<br>NOTES: fbterm256 decimal values, xterm256 hexidecimal values<br>
 <font color=white>NOTES:</font> color 1 (black) has been incremented (R+1,G+1,B+1)<br>
 &nbsp;<br>
 You can (also using an editor) select and copy entire columns
@@ -284,9 +288,36 @@ _
 \xe7\x38<br><!-- 1110 0  111 00  11 1000 -->
 \xff\xff<br><!-- 1111 1  111 11  11 1111 -->
 _
-</td><td>
+</td></tr></table>
+&nbsp;<br>
+<table class="values">
+<tr>
+<th>(in ./HW-MSX/): ls *hex* | grep -v "\.html"</th>
 </tr>
+<tr><td nowrap>
+<a href="./HW-MSX-C-cCOLOR24-printf-hex.h">HW-MSX-C-cCOLOR24-printf-hex.h</a><br>
+<a href="./HW-MSX-C-cCOLOR32-printf-hex.h">HW-MSX-C-cCOLOR32-printf-hex.h</a><br>
+<a href="./HW-MSX-C-hex-RGB-array.h">HW-MSX-C-hex-RGB-array.h</a><br>
+<a href="./HW-MSX-C-names-hex-RGB-arrays.h">HW-MSX-C-names-hex-RGB-arrays.h</a><br>
+<a href="./HW-MSX-hex-24.txt">HW-MSX-hex-24.txt</a><br>
+<a href="./HW-MSX-hex-24-0x-comma-space.txt">HW-MSX-hex-24-0x-comma-space.txt</a><br>
+<a href="./HW-MSX-hex-24-space.txt">HW-MSX-hex-24-space.txt</a><br>
+<a href="./HW-MSX-hex-24-html.txt">HW-MSX-hex-24-html.txt</a><br>
+<a href="./HW-MSX-hex-24-RGB-html.txt">HW-MSX-hex-24-RGB-html.txt</a><br>
+<a href="./HW-MSX-hex-24-CAPS.txt">HW-MSX-hex-24-CAPS.txt</a><br>
+<a href="./HW-MSX-hex-24-CAPS-space.txt">HW-MSX-hex-24-CAPS-space.txt</a><br>
+<a href="./HW-MSX-hex-24-RGB-forward-slash.txt">HW-MSX-hex-24-CAPS-forward-slash.txt</a><br>
+<a href="./HW-MSX-hex-24-RGB-printf.txt">HW-MSX-hex-24-RGB-printf.txt</a><br>
+<a href="./HW-MSX-hex-24-printf-CAPS-RGB888.txt">HW-MSX-hex-24-printf-CAPS-RGB888.txt</a><br>
+<a href="./HW-MSX-hex-32-printf-CAPS-RGBA8888.txt">HW-MSX-hex-32-printf-CAPS-RGBA8888.txt</a><br>
+<a href="./HW-MSX-hex-24-BGR-printf.txt">HW-MSX-hex-24-printf-CAPS-BGR888.txt</a><br>
+<a href="./HW-MSX-hex-32-printf-CAPS-BGRA8888.txt">HW-MSX-hex-32-printf-CAPS-BGRA8888.txt</a><br>
+<a href="./HW-MSX-xterm-16colors.sh">HW-MSX-xterm-16colors.sh</a><br>
+</td></tr>
 </table>
+<p>
+&nbsp;<br>
+</p>
 </body>
 </html>
 

@@ -106,8 +106,11 @@ table.values tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 $PN color palette as hexidecimal values<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF
@@ -267,7 +270,7 @@ _
 <a href="./${BN}-hex-32-printf-CAPS-RGBA8888.txt">${BN}-hex-32-printf-CAPS-RGBA8888.txt</a><br>
 <a href="./${BN}-hex-24-printf-CAPS-BGR888.txt">${BN}-hex-24-printf-CAPS-BGR888.txt</a><br>
 <a href="./${BN}-hex-32-printf-CAPS-BGRA8888.txt">${BN}-hex-32-printf-CAPS-BGRA8888.txt</a><br>
-<a href="./${BN}-xterm-${CN}colors.sh">${BN}-xterm-${CN}colors.sh</a><br>
+<a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
 <p>

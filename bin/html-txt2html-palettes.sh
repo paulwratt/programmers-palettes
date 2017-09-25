@@ -80,8 +80,11 @@ table.values tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 $PN color palette for HTML, Grafx2, Paint.Net, fbterm, xterm, CSS, ...<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette</br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF
@@ -203,7 +206,7 @@ _
 <a href="./${BN}-C-names-hex-RGB-arrays.h">${BN}-C-names-hex-RGB-arrays.h</a><br>
 <a href="./${BN}.gpl">${BN}.gpl</a><br>
 <a href="./${BN}.BAS.COLORS">${BN}.BAS.COLORS</a><br>
-<a href="./${BN}.grafx2-JASC.pal">${BN}.grafx2-JASC.pal</a><br>
+<a href="./${BN}.grafx2.JASC.pal">${BN}.grafx2-JASC.pal</a><br>
 <a href="./${BN}.paint.net.txt">${BN}.paint.net.txt</a><br>
 <a href="./${BN}.photoshop.act">${BN}.photoshop.act</a><br>
 <a href="./${BN}-hex-24-html.txt">${BN}-hex-24-html.txt</a><br>

@@ -74,8 +74,11 @@ table.values tr td {
 </style>
 </head>
 <body>
+<h1><a href="https://paulwratt.github.io/programmers-palettes/">Programmers Palettes</a></h1>
 &nbsp;<br>
 $PN color palette as decimal values<br>
+hardware fixed index palette<br>
+<!-- custom/optimized fixed index palette<br> -->
 &nbsp;<br>
 <table class="colors"><tbody><tr>
 EOF
@@ -210,7 +213,7 @@ _
 <a href="./${BN}-dec-24-space-BGR888.txt">${BN}-dec-24-space-BGR888.txt</a><br>
 <a href="./${BN}-dec-32-space-BGRA8888.txt">${BN}-dec-32-space-BGRA8888.txt</a><br>
 <a href="./${BN}-dec-24-space-BRG888.txt">${BN}-dec-24-space-BRG888.txt</a><br>
-<a href="./${BN}-fbterm-${CN}colors.sh">${BN}-fbterm-${CN}colors.sh</a><br>
+<a href="./${BN}.fbterm.${CN}colors.sh">${BN}.fbterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
 <p>

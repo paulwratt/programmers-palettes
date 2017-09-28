@@ -1,0 +1,361 @@
+
+<!-- saved from url=(0040)http://androidarts.com/palette/16pal.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>16 pal</title>
+
+	<meta name="GENERATOR" content="TextEdit">
+	<meta name="keywords" content="Art, redesigns, games, Android Arts, PSG, Prometheus, Retro, Concepts">
+	<meta name="description" content="16 color game palette.">
+	<meta name="copyright" content="Arne Niklas Jansson">
+	
+
+<style>
+/* AndroidArts CSS v2012.5.26 or later */
+body{
+	background-color:#e0e0e0;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+div#container {
+	width:740px;
+	background-color:white;
+	border-style:solid;
+	border-color:#d0d0d0;
+	border-width: 2px 2px 2px 2px;
+	margin: 10px auto 10px auto;
+	padding:10px 30px 20px 30px;
+	vertical-align:top;
+	color:black;
+	font-family: Trebuchet MS;
+	font-size: 12pt;
+}
+
+h3 {
+	border-style:dotted;
+	border-width: 0px 0px 2px 0px;
+	border-color:#e0e0e0;
+	margin: 25px 0px 0px 0px;
+	padding: 4px 8px 4px 8px;
+}
+
+h2{
+	background-color:#e0e0e0;
+	margin: 40px 0px 0px 0px;
+	padding: 4px 8px 4px 8px;
+}
+
+p {
+	text-align: justify;
+	color:black;
+}
+
+img.rightfloat{
+	float: right;
+	margin: 4px 0px 4px 10px;
+}
+
+img.leftfloat{
+	float: left;
+	margin: 4px 10px 4px 0px;
+}
+
+td {
+	width:70px;
+	border-style:solid;
+	border-color:#d0d0d0;
+	border-width: 2px 2px 2px 2px;
+	margin: 0px 0px 0px 0px;
+	padding:8px 8px 8px 8px;
+
+	color:black;
+	font-family: Trebuchet MS;
+	font-size: 8pt;
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+
+
+<h2>Generic 16 color game palette</h2>
+
+<h3>History</h3>
+<p>
+Long ago there were computers with limited, hard-wired color palettes. The older BBC Micro had only 8 colors, whilst the NES could pick colors from a larger palette (though individual sprites could only use 3 or 4 colors).
+16 colors is a good palette size because it's half a byte (4 bits) and thus suitable for a chunky/nibble mode. 8 and 32 colors likely need to be bitplaned.
+</p><p>
+ Generally, early palettes were just a result of simple circuit design, full blast on red, green and blue signals, sometimes halved by a resistor or something. RAMDACs which could control colors came later. Computers were also made to display text in readable colors, but many ended up being used a lot for gaming instead and the palettes worked poorly for that. The C64 is a bit of an exception with its more muted 16 color palette, which I heard was deliberately designed. Unsure about the video chip used in e.g. MSX.
+</p>
+<img src="./16 pal_files/16pal_v20.gif" alt="Arne&#39;s 16 color palette" class="rightfloat">
+
+<p>
+The C64 palette is nice but still bothered me a bit, so back in 2007 I decided to do my own 16 color palette. After some great input from the guys over at the <a href="http://www.wayofthepixel.net/index.php?topic=4306.0">Pixelation forums</a>, I eventually arrived at this current version, 20:  
+</p>
+
+<p>
+<table>
+<tbody><tr>
+<td bgcolor="#000000"><font color="White">#0<br> VOID</font></td>
+<td bgcolor="#9D9D9D">#1<br> GRAY</td>
+<td bgcolor="#FFFFFF">#2<br> WHITE</td>
+<td bgcolor="#BE2633">#3<br> RED</td>
+<td bgcolor="#E06F8B">#4<br> MEAT</td>
+<td bgcolor="#493C2B"><font color="White">#5<br> DARKBROWN</font></td>
+<td bgcolor="#A46422">#6<br> BROWN</td>
+<td bgcolor="#EB8931">#7<br> ORANGE</td>
+</tr>
+</tbody></table>
+</p>
+<p>
+<table>
+<tbody><tr>
+<td bgcolor="#F7E26B">#8<br> YELLOW</td>
+<td bgcolor="#2F484E"><font color="White">#9<br> DARKGREEN</font></td>
+<td bgcolor="#44891A">#10<br> GREEN</td>
+<td bgcolor="#A3CE27">#11<br> SLIMEGREEN</td>
+<td bgcolor="#1B2632"><font color="White">#12<br> NIGHTBLUE</font></td>
+<td bgcolor="#005784"><font color="White">#13<br> SEABLUE</font></td>
+<td bgcolor="#31A2F2">#14<br> SKYBLUE</td>
+<td bgcolor="#B2DCEF">#15<br> CLOUDBLUE</td>
+</tr>
+</tbody></table>
+</p>
+
+<p>
+Now a summary of the reasoning behind my color choices. <i>Why so many darks?</i> I like games with black backgrounds that don't interfere with the foreground characters, but it would be nice to be able to paint in some details, and I wanted both cold and warm choices here. <i>Where's the light skin tone?</i> I had a plain pink-ish skintone in the early version, but ended up having to merge it with the yellow. Yellow can be used as a stand-in and will come off as more pink with pink shading. <i>There's no mid blue?</i> I opted for a sky blue and ocean blue instead, because I thought they'd be more useful in games. <i>No purple?</i> This is not a text console palette, and I think purple is a somewhat obnoxious color which is too exotic to warrant a place here.
+</p>
+
+
+
+
+<h3>DATA</h3>
+
+<h4>Byte values in BlitzMax code</h4>
+<pre>' Arne Palette v20
+Function FUseColor(i)
+	Select i
+		Case 0 SetColor 0, 0, 0
+		Case 1 SetColor 157, 157, 157
+		Case 2 SetColor 255, 255, 255
+		Case 3 SetColor 190, 38, 51
+		Case 4 SetColor 224, 111, 139
+		Case 5 SetColor 73, 60, 43
+		Case 6 SetColor 164, 100, 34
+		Case 7 SetColor 235, 137, 49
+		Case 8 SetColor 247, 226, 107
+		Case 9 SetColor 47, 72, 78
+		Case 10 SetColor 68, 137, 26
+		Case 11 SetColor 163, 206, 39
+		Case 12 SetColor 27, 38, 50
+		Case 13 SetColor 0, 87, 132
+		Case 14 SetColor 49, 162, 242
+		Case 15 SetColor 178, 220, 239
+		Default SetColor 255, 0, 255 ' Out of bounds, Magenta.
+	End Select
+End Function
+</pre>
+
+<!--
+<h4>Names</h4>
+<pre>
+' Color names
+Const BLACK:Int = 0
+Const VOID:Int = 0
+
+Const GREY:Int = 1
+Const GRAY:Int = 1
+Const ASH:Int = 1
+	
+Const WHITE:Int = 2
+Const BLIND:Int = 2
+
+Const RED:Int = 3
+Const BLOODRED:Int = 3
+	
+Const PINK:Int = 4
+Const PIGMEAT:Int = 4
+	
+Const DBROWN:Int = 5
+Const DARKBROWN:Int = 5
+Const OLDPOOP:Int = 5
+	
+Const BROWN:Int = 6
+Const NEWPOOP:Int = 6
+	
+Const ORANGE:Int = 7
+Const BLAZE:Int = 7
+
+Const YELLOW:Int = 8
+Const ZORNSKIN:Int = 8
+	
+Const DGREEN:Int = 9
+Const DARKGREEN:Int = 9
+Const SHADEGREEN:Int = 9
+	
+Const GREEN:Int = 10
+Const LEAFGREEN:Int = 10
+	
+Const LGREEN:Int = 11
+Const LIGHTGREEN:Int = 11
+Const SLIMEGREEN:Int = 11
+	
+Const NBLUE:Int = 12
+Const NIGHTBLUE:Int = 12 ' TEAL?
+	
+Const DBLUE:Int = 13
+Const DARKBLUE:Int = 13
+Const SEABLUE:Int = 13
+Const OCEANBLUE:Int = 13
+	
+Const BLUE:Int = 14
+Const SKYBLUE:Int = 14
+	
+Const LBLUE:Int = 15
+Const LIGHTBLUE:Int = 15
+Const CLOUDBLUE:Int = 15
+
+Const MASK:Int = 16
+</pre>
+-->
+
+<h4>HTML/HEX</h4>
+<pre>0 - color:#000000;
+1 - color:#9D9D9D;
+2 - color:#FFFFFF;
+3 - color:#BE2633;
+4 - color:#E06F8B;
+5 - color:#493C2B;
+6 - color:#A46422;
+7 - color:#EB8931;
+8 - color:#F7E26B;
+9 - color:#2F484E;
+10 - color:#44891A;
+11 - color:#A3CE27;
+12 - color:#1B2632;
+13 - color:#005784;
+14 - color:#31A2F2;
+15 - color:#B2DCEF;
+</pre>
+
+<h4>Adobe Color Table</h4>
+<p>
+<a href="http://androidarts.com/palette/16pal_v20.act">16pal_v20.act</a> - Photoshop can load this file, but it's just 772 bytes of raw data. According to myself a the point of writing this, the format is 256 colors * 3 R,G,B bytes = 768 + three bytes ending the file, 16, 255, 255, where 16 is the amount of colors actually used (the rest are zeroed). 
+</p>
+
+<h3>Finishing thoughts</h3>
+<p>I might be mistaken, but this palette seems to have been used quite widely. I had never really thought a palette could be popular like that. Feel free to use it, and modify like I've seen some people do. Personally I've grown a bit bored with this 16 color palette, but I did use it recently for an Amiga AMOS project that I might post at some point.
+</p>
+
+<h3>Bonus round</h3>
+<p>
+Below are some other palettes that I've done, but there might be more on my other hardware / Amiga / Famicube pages, etc. Note that these palettes are not final. I need to check them on different monitors as I'm unsure about my calibration. The Famicube palette was made on Gamma 1.8 and 2.0 so I need to lighten it up a tiny bit (Might be done at version 10 or so). My blues may be a bit miscalibrated overall as well.
+</p>
+
+
+<h4>Expanded 16 color palette</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/16pal_v20-Expanded_v5.gif" alt="Arne&#39;s 32 color palette?">
+</center></td></tr></tbody></table>
+<p>
+I've added 16 more colors, filling in some of the gaps, but it's very rough atm. Did a few mockups to try the colors out. I could probably do a better 32 color palette from scratch so I might abandon this project.
+
+</p>
+
+<h4>CPC Boy</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td>
+<center><img src="./16 pal_files/CPCBoyPal.gif" alt="Armstrad CPC palette edit"></center>
+<center><img src="./16 pal_files/CPCBoy v3.gif" alt="Armstrad CPC palette edit"></center>
+</td></tr></tbody></table>
+<p>
+I sort of like the Armstrad CPC palette, but it's a bit too in my face with saturation madness. How does it look desaturated? Well, Photoshop changes the values a bit when desaturating, but I went in and did some manual tweaking. Only 27 entries, so I added a A Gameboy screen gradient at the end. Unsure about ordering. Version is at 3 or 4 now.
+
+</p>
+
+<h4>Eroge Copper</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/ErogeCopper16PalV1.gif" alt="Eroge Copper palette">
+</center></td></tr></tbody></table>
+<p>
+There was some activity over at the pixeljoint forums (I'm not registered though) to do a 16 color palette with character. I took this to mean that the palette should have a heavy focus on some colors, and less on others. This palette is made for Eroge games and cold-warm ramp games like Xenon II, Killing Gameshow, Paradroid 90. Because of the Eroge focus, I've included two warm / skin tone ramps. The green should ramp into the dark teal. 
+
+</p>
+
+<h4>Copper Tech</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/CopperTech16Pal.gif" alt="Copper Tech palette">
+</center></td></tr></tbody></table>
+<p>
+Another cold-warm ramp palette, more focused on tech. RGB extras.
+
+</p>
+
+<h4>Psygnosia</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/Psygnork.gif" alt="Psygnosia, a Psygnosis style palette">
+</center></td></tr></tbody></table>
+<p>
+Psygnosis often used palettes in the muddy range (It was often the copper skies which added a touch of color). This particular one was inspired by the game Ork. I meant to program the game ("Deathmask") for Amiga but couldn't come up with good tile scroller code.
+
+</p>
+
+<h4>CGArne</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/CGArne vE.gif" alt="CGA palette edit">
+</center></td></tr></tbody></table>
+<p>
+This started as an edit of a Windows 3.1 screenshot, but once I used the palette on screenshots I had to make major revisions because I had optimised it for icons. I tried judge the intent behind the color an artist used in a game, and then give that color retroactively. Obviously, with these new tweaked colors, artists would often make different choices than they do with the original palette.
+
+</p>
+
+<h4>A64</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/C64 pal v3 mockup scaled.gif" alt="C64 palette my style">
+</center></td></tr></tbody></table>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/Giana2pal.gif" alt="C64 palette my style">
+</center></td></tr></tbody></table>
+<p>
+It's almost a crime to touch the C64 and MSX palettes, but I had to do it just to have them here. I see mine as parallel universe versions, and if I'm gonna change something, I'm gonna make them my own and not tip-toe around. I'm not sure if I'm going in the right direction here though.
+</p>
+<p>
+When people get really dithery in their pieces, it can be an indication that they didn't find the right colors in the palette, and C64 pieces are indeed often very dither-wanky, even in the areas which are supposed to be flat. I think the C64 palette has a good reputation because it's almost the only one that isn't neon colors. I don't care much for the gray "bridge" colors ("None of the colors are what I need so I'm gonna dither-wank with the grays") so I had some fun changing those. I might have ended up nudging the colors too far towards my usual color tones overall, but I don't think I completely killed the character of the palette. 
+</p>
+<p>
+ I decided to be a little crazy with the non-white, because people seemed to have a lot of problem approaching a full white, and it adds some character to my version. I tried to preserve the lime yellow and gray teal somewhat, but couldn't tolerate the original light green.
+
+</p>
+
+<h4>JMP (Japanese Machine Palette)</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/MSX pal v3 scaled2.gif" alt="MSX palette edit">
+<img src="./16 pal_files/SonicMSX.gif" alt="MSX palette edit">
+</center></td></tr></tbody></table>
+<p>
+I wanted to do the MSX palette because it has some character. I suppose there aren't any "official" RGB colors for it though. Working with the MSX sprite restrictions is quite an interesting challenge / puzzle. Each 8px line of a tile can only have two colors out of the 16 (which includes a transparent first index). The restrictions dictate how the characters are formed, so good animation is an even bigger puzzle than static poses!
+</p>
+<p>
+The girl-portrait does not follow restrictions. Also, only the background tiles can have multiple colors, apparently the sprites are solid. Castle Excellent got around this by using BG tiles for movable characters, and I think some overlay sprites for skintones.
+</p>
+<p>
+Did a Sonic mockup just for fun.
+</p>
+
+
+<h4>PALDAC</h4>
+<table width="740" bgcolor="#202020" border="0"><tbody><tr><td><center>
+<img src="./16 pal_files/PALDAC 256 v01.gif" alt="PALDAC">
+</center></td></tr></tbody></table>
+<p>
+My <a href="http://androidarts.com/palette/Famicube.htm#paldac">Famicube page</a> has a section on putting these palettes into hardware, which might be crazy, but moderately fun for Arduino people who like to output their own VGA signals. The basic idea is to collect all of the palettes into a convenient DAC - a digital to analog converter chip which can be plugged into breadboards. Expensive to make though. I haven't yet decided on ordering, and many palettes are not final, but above is my WIP. It might not have the most recent versions!
+</p>
+
+
+<hr>
+<p></p><center>Art by Arne Niklas Jansson</center><p></p>
+<p></p><center><a href="http://androidarts.com/">AndroidArts.com</a></center><p></p>
+</div>
+
+
+</body></html>

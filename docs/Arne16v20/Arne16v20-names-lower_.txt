@@ -1,0 +1,16 @@
+void
+grey
+white
+red
+meat
+dark_brown
+brown
+orange
+yellow
+dark_green
+green
+slime_green
+night_blue
+sea_blue
+sky_blue
+cloud_blue

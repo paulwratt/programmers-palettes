@@ -1,0 +1,21 @@
+; Arne16v20 16 color palette (2017) for Paint.Net
+; https://github.com/paulwratt/programmers-palettes/docs/Arne16v20/Arne16v20.paint.net.txt
+; save this to:
+;  C:\User\<username>\Documents\paint.net User Files\Palettes\ Arne16v20_16.txt
+;
+000000 ; 0 - void
+9d9d9d ; 1 - grey
+ffffff ; 2 - white
+be2633 ; 3 - red
+e06f8b ; 4 - meat
+493c2b ; 5 - dark brown
+a46422 ; 6 - brown
+eb8925 ; 7 - orange
+f7e26b ; 8 - yellow
+2f484e ; 9 - dark green
+44891a ; 10 - green
+a3ce27 ; 11 - slime green
+1b2632 ; 12 - night blue
+005789 ; 13 - sea blue
+31a2f2 ; 14 - sky blue
+b2dcef ; 15 - cloud blue

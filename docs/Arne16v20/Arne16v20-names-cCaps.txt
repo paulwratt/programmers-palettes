@@ -1,0 +1,16 @@
+cVoid
+cGrey
+cWhite
+cRed
+cMeat
+cDarkBrown
+cBrown
+cOrange
+cYellow
+cDarkGreen
+cGreen
+cSlimeGreen
+cNightBlue
+cSeaBlue
+cSkyBlue
+cCloudBlue

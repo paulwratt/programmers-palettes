@@ -4,7 +4,7 @@ BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "txt2C-all-h"
   echo "Pre-processed text files to C/C++ header files (.h)"
-  echo "usage: txt2C-all-h.sh [--help]|[all]"
+  echo "usage: txt2C-all-h.sh [--help]|[do]"
   echo "notes: the following will be over written, in order"
   echo "       './$BN-C-names-array.h'"
   echo "       './$BN-C-dec-RGB-array.h'"
@@ -21,8 +21,8 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "       './$BN-hex-24-printf-CAPS-RGB888.txt'"
   exit 0
 fi
-if [ ! "$1" = "all" ]; then
-  echo "Error: txt2C-all-h.sh [--help]|[all]"
+if [ ! "$1" = "do" ]; then
+  echo "Error: txt2C-all-h.sh [--help]|[do]"
   exit 1
 fi
 

@@ -2,9 +2,9 @@
 BN=`pwd`
 BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
-  echo "gpl2hex24-all-txt"
+  echo "gpl2hex-all-txt"
   echo "GiMP color palette (.gpl) to 24bit RGB hexadecimal space text (.txt)"
-  echo "usage: gpl2hex24-all-txt.sh [--help]|filename.gpl"
+  echo "usage: gpl2hex-all-txt.sh [--help]|filename.gpl"
   echo "notes: the following will be over written, in order"
   echo "       './$BN-hex-24-printf.txt' "
   echo "       './$BN-hex-24-space.txt' "

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Programmers Palettes for other Systems and Platforms</title>
+<style>
+body {
+    font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<h2>Programmers Palettes for other Systems and Platforms</h2>
+<p>
+This part of the <a href="https://paulwratt.github.io/programmers-palettes/">programmers-palettes</a> contains downloads for non-PC platforms, usually retro (old) hardware platforms, that are not already available in each color set. For example, Grafix2 is available on may platforms, and uses a JASC-PAL format file, as used by PaintShop Pro.
+</p>
+<p>
+Each folder contains file formats specific to that platform. Where applicable, those may be: system palette files, palette as image, art package palette files.
+</p>
+<p>
+There are three main reasons for this:
+<ol>
+<li>there are many platforms still being actively developed for</li>
+<li>on some platforms there are many art packages specific to that platform</li>
+<li>some palette formats on those platforms require human intervention to create properly</li>
+<li>on some platforms there are more that one standard used for system palettes</li>
+</ol>
+An example of this is the Atari ST GEM VDI 256 color palette.
+<ul>
+<li>a new 16 color palette needs to be remapped into the ordered color list</li>
+<li>the orginal 16 colors needs to be remapped into the palette to be usable, as they are usually based colors</li>
+<li>the default color palette was mathmatically generated, so it is dark</li>
+<li>the alternative color palette is more common, with many pastel colors, so it is light</li>
+</ul>
+In the Atari ST case, although some art packages can handle image formats from other plaforms, some art packages can load a GEM control panel 16 color palette, while others have there own palette formats, and still others do not handle palette files. The GEM Desktop also saves the 16 color palette as part of its DESKTOP.INF file.
+</p>
+<p>
+A color palette is most often stored in headers in an image format, but not always, like MSX screen grabs, so a palette needs to be loaded programmatically (with code).
+</p>
+<p>
+Sometimes there are no conversion tools available to convert a GIF or PNG to a native art package format. And on older platforms, a lot of GIF conversion tools can't handle more than 256 colors. Even on PC some tools have better conversion algorithms than others, even within the same oftware company. For example, Adobe ImageReady produces better 256 color GIF files than Adobe Photoshop does.
+</p>
+<p>
+Currently available:
+<table>
+<tr><td colspan=2><b><a href="./AtariST/index.html">Atari ST, Falcon, ARAnyM</a></b></td></tr>
+<tr><td>system palettes:</td><td>16 color control panel</td></tr>
+<tr><td></td><td><a href="./AtariST/VDI-default/index.html">256 color default VDI</a></td></tr>
+<tr><td></td><td><a href="./AtariST/VDI-alternate/index.html">256 color alternate VDI</a></td></tr>
+<tr><td><a href="./AtariST/palette-formats/index.html">palettes formats</a>:</td><td>Control Panel .PAL</td></tr>
+<tr><td></td><td>X-Control .PAL</td></tr>
+<tr><td></td><td>Z-Control .PAL</td></tr>
+<tr><td><a href="./AtariST/palette-as-image/index.html">image formats</a>:</td><td>.PI0 Degas / Degas Elite</td></tr>
+<tr><td></td><td>.NEO Neochrome / Neochrome Master</td></tr>
+</table>
+<p>&nbsp;
+</p>
+</body>
+</html>

@@ -23,7 +23,7 @@ if [ ! -f "./${BN}-names-CAPS_.txt" ]; then
   exit 2
 fi
 if [ ! -f "./${BN}-hex-24-CAPS-forward-slash.txt" ]; then
-  echo "Error: file not found: './${BN}-hex-24-forward-slash.txt'"
+  echo "Error: file not found: './${BN}-hex-24-CAPS-forward-slash.txt'"
   exit 2
 fi
 

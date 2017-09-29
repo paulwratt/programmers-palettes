@@ -251,8 +251,14 @@ cat >> "./${BN}.html" <<EOF
 </td>
 </tr>
 </table>
+&nbsp<br>
+<h3>Extras</h3>
+There are more palette files available <a href="https://github.com/paulwratt/programmers-palettes/tree/master/docs/${BN}">here</a> (eg Atari Falcon VDI palette).<br>
+There are platform specific palettes available <a href="../x/index.html">here</a> (eg remapped Atari ST .PI1)<br>
+&nbsp<br>
 <!-- optional extras
-<a target="_new" href="./a-picture.png"><img src="./a-picture.png"></a>
+<a target="_new" href="./a-picture.png"><img src="./a-picture.png"></a> <a target="_new" href="./a-picture.gif"><img src="./a-picture.gif"></a><br>
+<a href="./a-download.ext">download.ext</a><br>
 -->
 </body>
 </html>
@@ -700,6 +706,9 @@ _
 <a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
+&nbsp<br>
+There are more palette files available <a href="https://github.com/paulwratt/programmers-palettes/tree/master/docs/${BN}">here</a> (eg Atari Falcon VDI palette).<br>
+There are platform specific palettes available <a href="../x/index.html">here</a> (eg remapped palette as Atari ST .PI1 image).<br>
 <p>
 &nbsp;<br>
 </p>

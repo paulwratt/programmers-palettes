@@ -213,6 +213,9 @@ _
 <a href="./${BN}.xterm.${CN}colors.sh">${BN}.xterm.${CN}colors.sh</a><br>
 </td></tr>
 </table>
+&nbsp<br>
+There are more palette files available <a href="https://github.com/paulwratt/programmers-palettes/tree/master/docs/${BN}">here</a> (eg Atari Falcon VDI palette).<br>
+There are platform specific palettes available <a href="../x/index.html">here</a> (eg remapped palette as Atari ST .PI1 image).<br>
 <p>
 &nbsp;<br>
 </p>

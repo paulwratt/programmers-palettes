@@ -29,7 +29,8 @@ table.values tr td {
 </style>
 </head>
 <body>
-<h3>Folders List: ${BN}</h3>
+<h2>Programmers Palettes<h2>
+<h3>extras: $1${BN}/</h3>
 <hr>
 <table class="values">
 <tr><td>
@@ -38,7 +39,7 @@ EOF
 
 for I in `ls --group-directories-first -1 | grep -v "\.html"`;do
   if [ -d "./$I" ]; then
-    echo "<a href=\"./$I/index.html\">$I</a><br>" >> index.html
+    echo "<a href=\"./$I/index.html\">$I/</a><br>" >> index.html
   else
     echo "<a href=\"./$I/index.html\">$I</a><br>" >> index.html
   fi

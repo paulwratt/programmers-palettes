@@ -29,7 +29,8 @@ table.values tr td {
 </style>
 </head>
 <body>
-<h3>Files List: ${BN}</h3>
+<h2>Programmers Palettes<h2>
+<h3>extras: $1${BN}/</h3>
 <hr>
 <table class="values">
 <tr><td>

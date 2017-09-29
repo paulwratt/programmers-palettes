@@ -2,19 +2,19 @@ GIMP Palette
 Name: AtariST-default-16
 Columns: 8
 #
-255 255 255	Untitled
-  0   0   0	Untitled
-255   0   0	Untitled
-  0 255   0	Untitled
-  0   0 255	Untitled
-  0 255 255	Untitled
-255 255   0	Untitled
-255   0 255	Untitled
-187 187 187	Untitled
-136 136 136	Untitled
-170   0   0	Untitled
-  0 170   0	Untitled
-  0   0 170	Untitled
-  0 170 170	Untitled
-170 170   0	Untitled
-170   0 170	Untitled
+255 255 255	0 - white
+  0   0   0	1 - black
+255   0   0	2 - red
+  0 255   0	3 - green
+  0   0 255	4 - blue
+  0 255 255	5 - cyan
+255 255   0	6 - yellow
+255   0 255	7 - magenta
+187 187 187	8 - gray
+136 136 136	9 - dark gray
+170   0   0	10 - dark red
+  0 170   0	11 - dark green
+  0   0 170	12 - dark blue
+  0 170 170	13 - dark cyan
+170 170   0	14 - dark yellow
+170   0 170	15 - dark magenta

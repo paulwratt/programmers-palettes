@@ -2,9 +2,9 @@
 BN=`pwd`
 BN=`basename "$BN"`
 if [ "$1" = "" -o "$1" = "--help" ]; then
-  echo "palette-gpl2vdi.pal"
+  echo "palette-txt2vdi.pal"
   echo "Pre-processed text (.txt) to Atari ST, Falcon, ARAnyM VDI color palette  (.pal)"
-  echo "usage: palette-gpl2vdi.pal.sh [--help]|[do]"
+  echo "usage: palette-txt2vdi.pal.sh [--help]|[do]"
   echo "notes: './$BN.vdi.pal' "
   echo "       will be over written."
   echo "requires: "
@@ -12,7 +12,7 @@ if [ "$1" = "" -o "$1" = "--help" ]; then
   exit 0
 fi
 if [ ! "$1" = "do" ]; then
-  echo "Error: palette-gpl2vdi.pal.sh [--help]|[do]"
+  echo "Error: palette-txt2vdi.pal.sh [--help]|[do]"
   exit 1
 fi
 

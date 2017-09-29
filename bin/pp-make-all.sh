@@ -110,4 +110,3 @@ echo "          add platform specific palette files under '../x/'"
 unset RD
 unset BN
 exit 0
-

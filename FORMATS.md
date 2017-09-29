@@ -59,8 +59,12 @@ an extensive suppliment to [gimp-palettes][gimp-preview] by [@denilsonsa][denils
         * **HW-MSX.paint.net.txt** - Paint.Net palette file with instructions and optional color names
         * **HW-MSX.BAS.COLORS** - ShellBASIC PSET/PRESET (Bas) palette files (fbterm + xterm + 32bit BGRA RPi framebuffer)
         * **HW-MSX.colors.bas** - ANSI (Bas) palette files (fbterm + xterm + 32bit BGRA framebuffer)
-        * **HW-MSX-fbterm-24-RGB-t_COLORS-printf.sh** - shell include file for fbterm printf ESC sequences
-        * **HW-MSX-xterm-24-RGB-t_COLORS-printf.sh** - shell include file for xterm printf ESC sequences
+        * **HW-MSX.fbterm.16colors.sh** - shell include file for fbterm printf ESC sequences
+        * **HW-MSX.xterm.16colors.sh** - shell include file for xterm printf ESC sequences
+        * **HW-MSX.vdi.16colors.txt** - decimal RGB VDI palette values (0-1000)
+        * **HW-MSX.vdi.hex.16colors.txt** - hexadecimal RGB VDI palette values (0000-03E8)
+        * **HW-MSX.vdi.printf.16colors.sh** - hexadecimal printf values (\x00\x00-\x03\xE8)
+        * **HW-MSX.vdi.16colors.pal** - (partial, of 256) VDI palette (prepend to default/common/alternate/NVDI .PAL file)
 
 [denilsonsa]: https://github.com/denilsonsa
 [gimp-preview]: http://denilsonsa.github.io/gimp-palettes/index.html

@@ -36,8 +36,10 @@ table.values tr td {
 <a href="../index.html">.. (parent)</a><br>
 EOF
 
-for I in `ls -1 | grep -v "\.html"`;do
+for I in `ls --group-directories-first -1 | grep -v "\.html"`;do
   if [ -d "./$I" ]; then
+    echo "<a href=\"./$I/index.html\">$I</a><br>" >> index.html
+  else
     echo "<a href=\"./$I/index.html\">$I</a><br>" >> index.html
   fi
 done

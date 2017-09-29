@@ -1,0 +1,86 @@
+#!/bin/sh
+. .SETUP
+if [ "$basCOLORS_DONE" = "1" ]; then
+if [ "$BASIC_COLORS" = "" ]; then
+
+    # (MSX) colors in BAS remap setaf/setab to setf/setb order
+    #       this means # order of 1st 16: t_COLORs != fb_COLORs
+    #         static int map[8]={ 0,4,2,6,1,5,3,7 };
+
+    # NOTE: sometimes you need screen colors AND actual colors
+    #       color numbers should match ~/.bashrc
+    #       color names are HTML names, plus some extras (eg BROWN)
+    #       fb_COLORs are poked directly in to framebuffer using dd
+    #       t_COLORs can be passed through: set 256 color tput/ESC code
+    #       remember 2nd 8 t_COLORs are 1st 8 t_COLORs + bold/bright
+
+    # these are RPi HDMI BGRA order framebuffer RGB values (A=ALPHA)
+    t_COLOR0="78 74 78";        t_EMPEROR="78 74 78";
+    t_COLOR1="52 36 68";        t_LIVID_BROWN="52 36 68";
+    t_COLOR2="109 52 48";       t_RHINO="109 52 48";
+    t_COLOR3="48 76 133";       t_MULE_FAWN="48 76 133";
+    t_COLOR4="36 101 52";       t_WOODLAND="36 101 52";
+    t_COLOR5="97 113 117";      t_PABLO="97 113 117";
+    t_COLOR6="72 70 208";       t_FLUSH_MAHOGANY="72 70 208";
+    t_COLOR7="206 125 89";      t_DANUBE="206 125 89";
+    t_COLOR8="44 125 210";      t_BRANDY_PUNCH="44 125 210";
+    t_COLOR9="44 170 109";      t_OLIVE_DRAB="44 170 109";
+    t_COLOR10="161 149 133";    t_REGENT_GRAY="161 149 133";
+    t_COLOR11="153 170 210";    t_EUNRY="153 170 210";
+    t_COLOR12="202 194 109";    t_DOWNY="202 194 109";
+    t_COLOR13="94 212 218";     t_TACHA="94 212 218";
+    t_COLOR14="28 12 20";       t_EBONY="28 12 20";
+    t_COLOR15="214 238 222";    t_ZANAH="214 238 222";
+
+  if echo "$TERM" | grep "fbterm" > /dev/null; then
+    t_SETCOLOR='\033[3;%d;%s}';  # for printf
+    # fbterm uses decimal values in tput/ESC codes for 256 colors
+    # COLOR 0 is the transparencey (background image) color
+    t_COLOR0="78;74;78";        t_EMPEROR="78;74;78";
+    t_COLOR1="68;36;52";        t_LIVID_BROWN="68;36;52";
+    t_COLOR2="48;52;109";       t_RHINO="48;52;109";
+    t_COLOR3="133;76;48";       t_MULE_FAWN="133;76;48";
+    t_COLOR4="52;101;36";       t_WOODLAND="52;101;36";
+    t_COLOR5="117;113;97";      t_PABLO="117;113;97";
+    t_COLOR6="208;70;72";       t_FLUSH_MAHOGANY="208;70;72";
+    t_COLOR7="89;125;206";      t_DANUBE="89;125;206";
+    t_COLOR8="210;125;44";      t_BRANDY_PUNCH="210;125;44";
+    t_COLOR9="109;170;44";      t_OLIVE_DRAB="109;170;44";
+    t_COLOR10="133;149;161";    t_REGENT_GRAY="133;149;161";
+    t_COLOR11="210;170;153";    t_EUNRY="210;170;153";
+    t_COLOR12="109;194;202";    t_DOWNY="109;194;202";
+    t_COLOR13="218;212;94";     t_TACHA="218;212;94";
+    t_COLOR14="20;12;28";       t_EBONY="20;12;28";
+    t_COLOR15="222;238;214";    t_ZANAH="222;238;214";
+
+  else
+    t_SETCOLOR='\033]4;%d;rgb:%s';  # for printf
+    # xterm-color256: xterm screen rxvt urxtv gnome lxterminal tmux
+    # xterm uses hexidecimal values in tput/ESC codes for 256 colors
+    t_COLOR0="4E/4A/4E";        t_EMPEROR="4E/4A/4E";
+    t_COLOR1="44/24/34";        t_LIVID_BROWN="44/24/34";
+    t_COLOR2="30/34/6D";        t_RHINO="30/34/6D";
+    t_COLOR3="85/4C/30";        t_MULE_FAWN="85/4C/30";
+    t_COLOR4="34/65/24";        t_WOODLAND="34/65/24";
+    t_COLOR5="75/71/61";        t_PABLO="75/71/61";
+    t_COLOR6="D0/46/48";        t_FLUSH_MAHOGANY="D0/46/48";
+    t_COLOR7="59/7D/CE";        t_DANUBE="59/7D/CE";
+    t_COLOR8="D2/7D/2C";        t_BRANDY_PUNCH="D2/7D/2C";
+    t_COLOR9="6D/AA/2C";        t_OLIVE_DRAB="6D/AA/2C";
+    t_COLOR10="85/95/A1";       t_REGENT_GRAY="85/95/A1";
+    t_COLOR11="D2/AA/99";       t_EUNRY="D2/AA/99";
+    t_COLOR12="6D/C2/CA";       t_DOWNY="6D/C2/CA";
+    t_COLOR13="DA/D4/5E";       t_TACHA="DA/D4/5E";
+    t_COLOR14="14/0C/1C";       t_EBONY="14/0C/1C";
+    t_COLOR15="DE/EE/D6";       t_ZANAH="DE/EE/D6";
+  fi
+else
+  if [ ! -f "$BASIC_COLORS" ]; then
+    echo "BASIC_COLORS: file not found \'$BASIC_COLORS\'"
+  else
+    . "$BASIC_COLORS"
+  fi
+fi
+fi
+export basCOLORS_DONE=1
+exit 0

@@ -4,7 +4,7 @@ BN=`basename "$BN"`
 RD=`dirname $0`
 if [ "$1" = "" -o "$1" = "--help" ]; then
   echo "programmers-palette"
-  echo "Make a set conatining all data, html and palette files, from a GiMP palette file."
+  echo "Make a set containing all data, html and palette files, from a GiMP palette file."
   echo "usage: palette-txt2vdi.pal.sh [--help]|[do]"
   echo "requires:"
   echo "       './$BN.gpl'"
@@ -46,64 +46,31 @@ if [ ! "`head -n 1 "$PF"`" = "GIMP Palette" ]; then
   exit 2
 fi
 
-if "${RD}/gpl2names-all-txt.sh" "./$PF"; then
-  echo "Error: in name outputs"
-  echo "       make sure there are indexed color names"
-  echo "       './$BN.gpl'"
-  echo "  0   0   0(tab)0 - black"
-  exit 1
-fi
+"${RD}/gpl2names-all-txt.sh" "./$PF"
 echo "completed: name outputs"
-if "${RD}/gpl2dec-all-txt.sh" "./$PF"; then
-  echo "Error: in decimal outputs"
-  exit 2
-fi
+"${RD}/gpl2dec-all-txt.sh" "./$PF"
 echo "completed: decimal outputs"
-if "${RD}/gpl2hex-all-txt.sh" "./$PF"; then
-  echo "Error: in hexadecimal outputs"
-  exit 3
-fi
+"${RD}/gpl2hex-all-txt.sh" "./$PF"
 echo "completed: hexadecimal outputs"
-if "${RD}/txt2C-all-h.sh" do; then
-  echo "Error: in C/C++ header outputs"
-  exit 4
-fi
-echo "completed: decimal outputs"
-if "${RD}/txt2html-all.sh" do; then
-  echo "Error: in html outputs"
-  exit 5
-fi
+"${RD}/txt2C-all-h.sh" do
+echo "completed: C/C++ outputs"
+"${RD}/txt2html-all.sh" do
 echo "completed: html outputs"
-echo
 printf "Grafx2 palette: "
-if "${RD}/palette-txt2grafx2.pal.sh" do; then
-  echo "Warning: 'seq' is used"
-fi
+"${RD}/palette-txt2grafx2.pal.sh" do
 printf "Paint.Net palette: "
-if "${RD}/palette-txt2paint.net.sh" do; then
-  echo "Warning: names not present"
-fi
+"${RD}/palette-txt2paint.net.sh" do
 printf "Photoshop palette: "
-if "${RD}/palette-txt2photoshop.act.sh" do; then
-  echo "Warning: 'palette-txt2photoshop.act.sh' for requirements"
-fi
+"${RD}/palette-txt2photoshop.act.sh" do
 printf "BAS palette: "
-if "${RD}/palette-txt2BAS.COLORS.sh" do; then
-  echo "Warning: 'palette-txt2BAS.COLORS.sh' for requirements"
-fi
+"${RD}/palette-txt2BAS.COLORS.sh" do
 printf "fbterm palette: "
-if "${RD}/palette-txt2fbterm.colors.sh" do; then
-  echo "Warning: 'palette-txt2fbterm.colors.sh' for requirements"
-fi
+"${RD}/palette-txt2fbterm.colors.sh" do
 printf "xterm palette: "
-if "${RD}/palette-txt2xterm.colors.sh" do; then
-  echo "Warning: 'palette-txt2xterm.colors.sh' for requirements"
-fi
+"${RD}/palette-txt2xterm.colors.sh" do
 printf "VDI palette: "
-if "${RD}/palette-txt2vdi.pal.sh" do; then
-  echo "Warning: 'palette-txt2vdi.pal.sh' for requirements"
-fi
-
+"${RD}/palette-txt2vdi.pal.sh" do
+echo
 echo "REMINDER: add any images or extra downloads to './${BN}.html'"
 echo "          add platform specific palette files under '../x/'"
 

@@ -1,0 +1,21 @@
+; DawnBringer16 16 color palette (2017) for Paint.Net
+; https://github.com/paulwratt/programmers-palettes/docs/DawnBringer16/DawnBringer16.paint.net.txt
+; save this to:
+;  C:\User\<username>\Documents\paint.net User Files\Palettes\ DawnBringer16_16.txt
+;
+4e4a4e ; 0 - emperor
+442434 ; 1 - livid brown
+30346d ; 2 - rhino
+854c30 ; 3 - mule fawn
+346524 ; 4 - woodland
+757161 ; 5 - pablo
+d04648 ; 6 - flush mahogany
+597dce ; 7 - danube
+d27d2c ; 8 - brandy punch
+6daa2c ; 9 - olive drab
+8595a1 ; 10 - regent gray
+d2aa99 ; 11 - eunry
+6dc2ca ; 12 - downy
+dad45e ; 13 - tacha
+140c1c ; 14 - ebony
+deeed6 ; 15 - zanah

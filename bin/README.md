@@ -73,6 +73,7 @@ Current utilities (in order of use):
 * gpl2palette-files.sh
     * **palette-gpl2grafx2.pal.sh** - generates 256 color JASC-PAL palette for Grafix2, Graphics Gale, Paintshop Pro
     * **palette-gpl2paint.net.sh** - generates Paint.Net palette files (optionally with names and numbers, if present in .gpl)
+    * **palette-gpl2vdi.pal.sh** - generates partial palette file for Atari Falcon 265 color VDI (binary, 0-1000 per channel)
     * **palette-txt2grafx2.pal.sh** - generates 256 color JASC-PAL palette for Grafix2, Graphics Gale, Paintshop Pro
     * **palette-txt2paint.net.sh** - generates Paint.Net palette files with names and numbers
     * **palette-txt2photoshop.act.sh** - generates 256 color palette binary file for Adobe Photoshop

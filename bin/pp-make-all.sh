@@ -105,6 +105,7 @@ if "${RD}/palette-txt2vdi.pal.sh" do; then
 fi
 
 echo "REMINDER: add any images or extra downloads to './${BN}.html'"
+echo "          add platform specific palette files under '../x/'"
 
 unset RD
 unset BN

@@ -3,20 +3,20 @@ Name: DawnBringer's 16 Color Palette
 Columns: 5
 # http://www.pixeljoint.com/forum/forum_posts.asp?TID=12795
 # http://goto.glocalnet.net/richard_fhager/db16_v1_analyze.png
-# color names approximate only: http://chir.ag/projects/name-that-color/
- 78  74  78	0 - emperor
- 68  36  52	1 - livid brown
- 48  52 109	2 - rhino
-133  76  48	3 - mule fawn
- 52 101  36	4 - woodland
-117 113  97	5 - pablo
-208  70  72	6 - flush mahogany
- 89 125 206	7 - danube
-210 125  44	8 - brandy punch
-109 170  44	9 - olive drab
-133 149 161	10 - regent gray
-210 170 153	11 - eunry
-109 194 202	12 - downy
-218 212  94	13 - tacha
- 20  12  28	14 - ebony
-222 238 214	15 - zanah
+# color names: http://www.color-blindness.com/color-name-hue/
+ 78  74  78	0 - dark liver brown dark gray
+ 68  36  52	1 - castro dark burgandy red dark brown
+ 48  52 109	2 - dark torea bay violet dark blue
+133  76  48	3 - korma orange medium dark brown
+ 52 101  36	4 - dark san felix dark green
+117 113  97	5 - flint yellow green medium gray
+208  70  72	6 - dark valencia pale red
+ 89 125 206	7 - bright havelock blue grey blue
+210 125  44	8 - light tango brown orange
+109 170  44	9 - bright sushi yellow green
+133 149 161	10 - dark bali hai blue dark grey
+210 170 153	11 - bright cashmere dark pink brown
+109 194 202	12 - bright seagull light blue grey
+218 212  94	13 - bright goldenrod light grey yellow
+ 20  12  28	14 - dark blackcurrent violet near black
+222 238 214	15 - light tara green grey white

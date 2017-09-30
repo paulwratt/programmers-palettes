@@ -9,6 +9,14 @@ Color name and hue:
 
 ----
 
+# Short color names
+
+Where no color names are defined in the GiMP palette, or in the reference source, for simplicity (see effort below), and used as variable names "only for that palette". When used with other palettes, they should be prefixed with the value noted in the GiMP palette file, or use the 'approx-names', or the short form of 'long-names', any are valid.
+
+----
+
+# Long color names
+
 GiMP palettes, especially custom 16 color, or optimized 16 color, without color names are extremely hard to accurately name. Using the above url, with visual verification of the actual color compared to the nearest color (name) in that hue (red, orange, yellow, green, blue, violet, brown, black, grey, and white), I used the following algorithm to accurately describe the color, which should be unique when compared to another hand named palette (by programmers-palettes). Unfortunately this does make them somewhat unusable as variable names, but hey, no one else took the time, so ..
 
 (light=>name)(looks_like|hue-ish)(variation)(most_like)
@@ -22,6 +30,14 @@ Examples:
 * #4e4a4e - dark liver brown dark gray
 * #442434 - castro dark burgandy red dark brown
 * #30346d - dark torea bay violet dark blue
+
+----
+
+# Short form of Long Names
+
+(name) (from above) or
+(approx-name) or
+(prefix)(official-name) (short names by programmers-palettes)
 
 ----
 

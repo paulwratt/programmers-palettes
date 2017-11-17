@@ -1,6 +1,8 @@
 next: Pantone
 ===============
 
+index landing page changed to cope with non-JS and low-CSS (retro) browsers
+
 
 170930 DawnBringer16:
 ==============
